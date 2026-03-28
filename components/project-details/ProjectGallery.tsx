@@ -5,35 +5,46 @@ interface ProjectGalleryProps {
 }
 
 export function ProjectGallery({ images }: ProjectGalleryProps) {
-  // We expect at least 3 images for the layout
-  const [main, second, third] = images;
+  // We need at least 3 images for the layout seen in the design
+  // Fallback to placeholders if not provided
+  const displayImages = [
+    images[0] || "https://picsum.photos/seed/project1/1200/800",
+    images[1] || "https://picsum.photos/seed/project2/600/400",
+    images[2] || "https://picsum.photos/seed/project3/600/400",
+  ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="md:col-span-2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg border border-border/40">
-        <Image
-          src={main || "https://picsum.photos/seed/main/1200/900"}
-          alt="Main project visual"
-          fill
-          className="object-cover transition-transform duration-700 hover:scale-105"
-        />
-      </div>
-      <div className="flex flex-col gap-6">
-        <div className="flex-1 aspect-square relative rounded-2xl overflow-hidden shadow-md border border-border/40">
+    <div className="container mx-auto px-4 max-w-7xl mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 aspect-[21/10]">
+        {/* Left: Big Image (8 columns) */}
+        <div className="md:col-span-8 relative rounded-[2rem] overflow-hidden border border-border-subtle">
           <Image
-            src={second || "https://picsum.photos/seed/detail1/600/600"}
-            alt="Project detail 1"
+            src={displayImages[0]}
+            alt="Project Featured"
             fill
-            className="object-cover transition-transform duration-700 hover:scale-105"
+            className="object-cover"
+            priority
           />
         </div>
-        <div className="flex-1 aspect-square relative rounded-2xl overflow-hidden shadow-md border border-border/40">
-          <Image
-            src={third || "https://picsum.photos/seed/detail2/600/600"}
-            alt="Project detail 2"
-            fill
-            className="object-cover transition-transform duration-700 hover:scale-105"
-          />
+
+        {/* Right: Two Small Stacked Images (4 columns) */}
+        <div className="md:col-span-4 grid grid-rows-2 gap-6">
+          <div className="relative rounded-[1.5rem] overflow-hidden border border-border-subtle">
+            <Image
+              src={displayImages[1]}
+              alt="Project Detail 1"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative rounded-[1.5rem] overflow-hidden border border-border-subtle">
+            <Image
+              src={displayImages[2]}
+              alt="Project Detail 2"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>

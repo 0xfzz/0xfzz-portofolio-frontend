@@ -8,18 +8,18 @@ interface ProjectCardProps {
   description: string;
   image: string;
   slug: string;
-  category: "Open Source" | "Public" | "Private";
+  category: string;
 }
 
 export function ProjectCard({ title, description, image, slug, category }: ProjectCardProps) {
   return (
-    <div className="group bg-white rounded-2xl p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-500 border border-transparent hover:border-border/40">
-      <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-border/10">
+    <div className="group bg-white rounded-2xl p-4 border border-border-subtle">
+      <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-border-subtle">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          className="object-cover"
         />
         <div className="absolute top-3 right-3">
           <Badge 

@@ -11,7 +11,7 @@ interface BlogCardProps {
 export function BlogCard({ date, tags, title, slug }: BlogCardProps) {
   return (
     <Link href={`/blog/${slug}`} className="block group">
-      <div className="bg-white border border-border/50 rounded-lg p-5 transition-all duration-300 group-hover:border-[#323235]/40 group-hover:shadow-sm">
+      <div className="bg-white border border-border-subtle rounded-lg p-5 group-hover:bg-[#F9FAFB]">
         <div className="space-y-1.5">
           {/* Meta line */}
           <div className="flex items-center gap-4">

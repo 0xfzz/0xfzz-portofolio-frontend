@@ -1,0 +1,24 @@
+{
+  "title": "Let's Connect",
+  "subtitle": "I'm currently open to new opportunities and technical collaborations. Reach out using the digital outposts below.",
+  "methods": [
+    {
+      "platform": "GitHub",
+      "label": "View Repositories",
+      "href": "https://github.com/0xfzz",
+      "icon": "Github"
+    },
+    {
+      "platform": "LinkedIn",
+      "label": "Professional Network",
+      "href": "https://linkedin.com/in/0xfzz",
+      "icon": "Linkedin"
+    },
+    {
+      "platform": "Email",
+      "label": "hello@architect.logic",
+      "href": "mailto:hello@architect.logic",
+      "icon": "Mail"
+    }
+  ]
+}

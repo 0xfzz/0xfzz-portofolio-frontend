@@ -1,34 +1,9 @@
+import Link from "next/link";
 import { ProjectCard } from "./ProjectCard";
 import { Button } from "./ui/button";
+import { Project } from "@/lib/content";
 
-const PROJECTS: any[] = [
-  {
-    title: "Quantum API Engine",
-    description: "High-throughput GraphQL engine built for real-time financial data processing, utilizing Rust and Node.js workers.",
-    image: "https://picsum.photos/seed/quantum/800/450",
-    status: "OPEN SOURCE",
-    type: "open-source",
-    slug: "quantum-api-engine",
-  },
-  {
-    title: "Nexus CRM Platform",
-    description: "Enterprise-grade CRM with automated lead scoring and integrated machine learning models for churn prediction.",
-    image: "https://picsum.photos/seed/nexus/800/450",
-    status: "ACTIVE PROJECT",
-    type: "public",
-    slug: "nexus-crm-platform",
-  },
-  {
-    title: "BlockTrace Core",
-    description: "Distributed ledger verification system for supply chain transparency, featuring Dockerized validator nodes.",
-    image: "https://picsum.photos/seed/trace/800/450",
-    status: "NDA PROTECTED",
-    type: "private",
-    slug: "blocktrace-core",
-  },
-];
-
-export function Projects() {
+export function Projects({ projects }: { projects: Project[] }) {
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-4">
@@ -39,12 +14,14 @@ export function Projects() {
               A selection of my recent work in backend engineering, cloud architecture, and web development.
             </p>
           </div>
-          <Button variant="outline" className="hidden md:flex">View All Projects</Button>
+          <Button variant="outline" className="hidden md:flex" asChild>
+            <Link href="/projects">View All Projects</Link>
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {projects.slice(0, 3).map((project) => (
+            <ProjectCard key={project.slug} {...project} />
           ))}
         </div>
       </div>

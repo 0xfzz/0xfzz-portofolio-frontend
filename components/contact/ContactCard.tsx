@@ -13,7 +13,7 @@ export function ContactCard({ icon: Icon, title, subtext, href }: ContactCardPro
       href={href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="group block p-10 bg-white rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-500 text-center border border-transparent hover:border-border/40"
+      className="group block p-10 bg-white rounded-2xl border border-border-subtle text-center"
     >
       <div className="w-16 h-16 bg-[#F8F9FA] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#323235] transition-colors duration-500">
         <Icon className="w-8 h-8 text-[#323235] group-hover:text-white transition-colors duration-500" />

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Code2 } from "lucide-react";
 
 interface ProjectSidebarProps {
   liveUrl?: string;
@@ -8,29 +8,18 @@ interface ProjectSidebarProps {
 
 export function ProjectSidebar({ liveUrl, githubUrl }: ProjectSidebarProps) {
   return (
-    <div className="space-y-6 sticky top-24">
-      <div className="space-y-3">
-        <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] block mb-4">
-          Core Actions
-        </span>
-        <Button 
-          className="w-full justify-between bg-[#777E65] hover:bg-[#666C57] text-[#FCF8F9] rounded-sm py-6 font-bold"
-          asChild
-        >
-          <a href={liveUrl || "#"} target="_blank" rel="noopener noreferrer">
-            Live Demo
-            <ExternalLink className="w-4 h-4" />
-          </a>
+    <div className="space-y-6">
+      <h4 className="text-[10px] font-extrabold text-[#323235] uppercase tracking-[0.2em] opacity-40">
+        Core Actions
+      </h4>
+      <div className="flex flex-col gap-3">
+        <Button className="w-full bg-[#777E65] hover:bg-[#777E65]/90 text-white gap-2 h-12 font-bold rounded-lg border-none justify-between px-4">
+          <span>Live Demo</span>
+          <ExternalLink className="w-4 h-4 opacity-70" />
         </Button>
-        <Button 
-          variant="outline"
-          className="w-full justify-between border-border/60 rounded-sm py-6 font-bold text-[#4A5568]"
-          asChild
-        >
-          <a href={githubUrl || "#"} target="_blank" rel="noopener noreferrer">
-            Source Code
-            <Github className="w-4 h-4" />
-          </a>
+        <Button variant="outline" className="w-full bg-white hover:bg-[#F9F9F9] text-[#323235] border border-[#E5E7EB] gap-2 h-12 font-bold rounded-lg justify-between px-4">
+          <span>Source Code</span>
+          <Code2 className="w-4 h-4 opacity-70" />
         </Button>
       </div>
     </div>

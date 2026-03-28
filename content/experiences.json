@@ -1,0 +1,35 @@
+[
+  {
+    "company": "TechStream Solutions",
+    "role": "Lead Architect",
+    "period": "2022 - PRESENT",
+    "description": [
+      "Orchestrating the transition from monolithic to microservices architecture, improving system uptime to 99.9% while leading a team of 12 engineers.",
+      "Optimized database performance by implementing a multi-tier caching strategy with Redis and specialized query tuning.",
+      "Established core architectural standards across the engineering department to ensure scalability and maintainability."
+    ],
+    "tags": ["Node.js", "Kubernetes", "AWS", "Go"]
+  },
+  {
+    "company": "ByteBound Systems",
+    "role": "Senior Full-stack Developer",
+    "period": "2019 - 2022",
+    "description": [
+      "Architected the core API engine for a series-B fintech startup, handling $10M+ in monthly transaction volume with sub-100ms latency.",
+      "Led the design and implementation of a real-time risk assessment engine using event-driven architecture.",
+      "Reduced cloud infrastructure costs by 40% through containerization and rightsizing AWS resources."
+    ],
+    "tags": ["React", "PostgreSQL", "Redis", "Docker"]
+  },
+  {
+    "company": "CyberShield Labs",
+    "role": "Security Researcher",
+    "period": "2017 - 2019",
+    "description": [
+      "Conducted deep-dive security audits and automated vulnerability scanning for enterprise partners, reducing critical surface area by 60%.",
+      "Developed internal toolsets for automated penetration testing and vulnerability reporting.",
+      "Collaborated with dev teams to implement secure coding practices and OWASP top-10 mitigation strategies."
+    ],
+    "tags": ["Python", "Rust", "Linux", "Burp Suite"]
+  }
+]

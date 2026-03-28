@@ -1,13 +1,28 @@
 import { Github, Linkedin, Dribbble } from "lucide-react";
 import Link from "next/link";
 
-export function Footer() {
+interface FooterData {
+  copyright: string;
+  tagline: string;
+}
+
+export function Footer({ data }: { data?: FooterData }) {
+  const currentYear = new Date().getFullYear();
+  const copyrightText = data?.copyright.replace("{year}", currentYear.toString()) || `© ${currentYear} 0xfzz. Built with love.`;
+
   return (
     <footer className="py-12 border-t border-border/40">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} 0xfzz. Built with love.
-        </p>
+        <div className="space-y-1">
+          <p className="text-sm font-bold text-[#323235]">
+            {copyrightText}
+          </p>
+          {data?.tagline && (
+            <p className="text-xs text-muted-foreground">
+              {data.tagline}
+            </p>
+          )}
+        </div>
         
         <div className="flex items-center gap-6">
           <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">

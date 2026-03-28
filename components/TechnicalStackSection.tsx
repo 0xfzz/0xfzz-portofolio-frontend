@@ -1,14 +1,24 @@
+const DEFAULT_STACKS = [
+  { category: "FRONTEND", skills: "React, Next.js, Tailwind" },
+  { category: "BACKEND", skills: "Node.js, Go, Python" },
+  { category: "INFRASTRUCTURE", skills: "AWS, Docker, K8s" },
+  { category: "DATA", skills: "PostgreSQL, Redis, Mongo" }
+];
+
 interface SkillGroup {
   category: string;
   skills: string;
 }
 
 interface TechnicalStackSectionProps {
-  title: string;
-  stacks: SkillGroup[];
+  title?: string;
+  stacks?: SkillGroup[];
 }
 
-export function TechnicalStackSection({ title, stacks }: TechnicalStackSectionProps) {
+export function TechnicalStackSection({ 
+  title = "Technical Stack", 
+  stacks = DEFAULT_STACKS 
+}: TechnicalStackSectionProps) {
   return (
     <div className="mb-32">
       <h4 className="text-[0.65rem] font-extrabold tracking-[0.2em] text-[#323235] uppercase mb-10 opacity-70">

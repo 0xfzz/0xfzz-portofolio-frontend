@@ -57,10 +57,10 @@ export function TechStack() {
             return (
               <div 
                 key={benefit.title} 
-                className="p-8 bg-white rounded-xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg group"
+                className="p-8 bg-white border border-border-subtle rounded-xl flex flex-col items-center justify-center text-center group"
               >
                 <div className="mb-6">
-                  <Icon className="w-8 h-8 text-[#323235] opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <Icon className="w-8 h-8 text-[#323235] opacity-80" />
                 </div>
                 <h3 className="text-xs font-bold tracking-tight text-[#323235]">
                   {benefit.title}
