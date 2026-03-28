@@ -7,7 +7,6 @@ images: [
   "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070",
   "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000"
 ]
-category: "INFRASTRUCTURE DESIGN"
 tags: ["Go", "Kubernetes", "Observability"]
 technologies: ["Go / Golang", "TypeScript", "React", "Docker", "Kubernetes", "Apache Kafka", "gRPC", "Prometheus"]
 githubUrl: "https://github.com/0xfzz/lumina-core"

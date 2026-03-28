@@ -110,7 +110,6 @@ export interface Article {
   title: string;
   date: string;
   tags: string[];
-  category: string;
   slug: string;
   image: string;
   excerpt: string;
@@ -128,7 +127,6 @@ export interface Project {
   image: string;
   images?: string[];
   slug: string;
-  category: string;
   tags: string[];
   technologies: string[];
   liveUrl?: string;

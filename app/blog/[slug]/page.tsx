@@ -22,7 +22,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         <BlogDetailHeader 
           title={article.title}
           date={article.date}
-          category={article.category}
+          tags={article.tags}
           image={article.image}
         />
 

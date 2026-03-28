@@ -8,10 +8,10 @@ interface ProjectCardProps {
   description: string;
   image: string;
   slug: string;
-  category: string;
+  tags: string[];
 }
 
-export function ProjectCard({ title, description, image, slug, category }: ProjectCardProps) {
+export function ProjectCard({ title, description, image, slug, tags }: ProjectCardProps) {
   return (
     <div className="group bg-white rounded-2xl p-4 border border-border-subtle">
       <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-border-subtle">
@@ -21,13 +21,16 @@ export function ProjectCard({ title, description, image, slug, category }: Proje
           fill
           className="object-cover"
         />
-        <div className="absolute top-3 right-3">
-          <Badge 
-            variant="secondary" 
-            className="bg-[#B2BDC8] text-[#323235] border-none px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-sm"
-          >
-            {category}
-          </Badge>
+        <div className="absolute top-3 right-3 flex gap-2">
+          {tags.slice(0, 1).map((tag) => (
+            <Badge 
+              key={tag}
+              variant="secondary" 
+              className="bg-[#B2BDC8] text-[#323235] border-none px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-sm"
+            >
+              {tag}
+            </Badge>
+          ))}
         </div>
       </div>
 

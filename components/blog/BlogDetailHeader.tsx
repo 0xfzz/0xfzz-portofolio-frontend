@@ -4,13 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronLeft } from "lucide-react";
 
 interface BlogDetailHeaderProps {
-  category: string;
+  tags: string[];
   date: string;
   title: string;
   image: string;
 }
 
-export function BlogDetailHeader({ category, date, title, image }: BlogDetailHeaderProps) {
+export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderProps) {
   return (
     <div className="space-y-12 mb-16 px-4">
       <div className="container mx-auto max-w-4xl space-y-8">
@@ -24,12 +24,17 @@ export function BlogDetailHeader({ category, date, title, image }: BlogDetailHea
 
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <Badge 
-              variant="secondary" 
-              className="bg-[#B2BDC8]/80 text-[#323235] border-none px-3 py-1 text-[9px] font-bold uppercase tracking-widest rounded-sm"
-            >
-              {category}
-            </Badge>
+            <div className="flex gap-2">
+              {tags.map((tag) => (
+                <Badge 
+                  key={tag}
+                  variant="secondary" 
+                  className="bg-[#B2BDC8]/80 text-[#323235] border-none px-3 py-1 text-[9px] font-bold uppercase tracking-widest rounded-sm"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
             <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
               {date}
             </span>

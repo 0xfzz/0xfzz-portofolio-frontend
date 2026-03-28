@@ -2,7 +2,6 @@
 title: "Mastering React Hooks: The Hidden Logic"
 date: "October 24, 2024"
 tags: ["TypeScript", "Node.js", "Architectural"]
-category: "PERFORMANCE"
 slug: "mastering-react-hooks"
 image: "https://picsum.photos/seed/hooks-detail/1600/900"
 language: "javascript"

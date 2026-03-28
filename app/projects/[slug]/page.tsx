@@ -34,7 +34,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="pt-20">
         <ProjectHeader 
           title={project.title}
-          category={project.category}
+          tags={project.tags}
           description={project.description}
         />
         
