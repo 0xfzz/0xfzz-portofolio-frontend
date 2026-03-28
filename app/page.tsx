@@ -3,10 +3,11 @@ import { Hero } from "@/components/Hero";
 import { TechStack } from "@/components/TechStack";
 import { Projects } from "@/components/Projects";
 import { Footer } from "@/components/Footer";
-import { getLandingPageData, getProjects } from "@/lib/content";
+import { getLandingPageData, getProjects, getTechStackData } from "@/lib/content";
 
 export default async function Home() {
   const landingData = await getLandingPageData();
+  const techStackData = await getTechStackData();
   const projects = await getProjects();
 
   return (
@@ -14,7 +15,7 @@ export default async function Home() {
       <Navbar />
       <Hero data={landingData.hero} />
       <div id="tech-stack">
-        <TechStack />
+        <TechStack data={techStackData} />
       </div>
       <div id="projects">
         <Projects projects={projects} />

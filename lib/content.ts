@@ -100,8 +100,11 @@ async function getMarkdownBySlug<T>(directory: string, slug: string): Promise<T 
 // --- PUBLIC API ---
 
 export const getLandingPageData = () => getJsonFile<any>("landing-page.json");
-export const getExperiencesData = () => getJsonFile<any[]>("experiences.json");
+export const getExperiencesData = () => getJsonFile<any[]>("experiences/work_experiences.json");
 export const getContactData = () => getJsonFile<any>("contact.json");
+export const getTechStackData = () => getJsonFile<any>("tech-stack.json");
+export const getEducationData = () => getJsonFile<any[]>("experiences/education.json");
+export const getAwardsData = () => getJsonFile<any[]>("experiences/awards.json");
 
 export interface Article {
   title: string;

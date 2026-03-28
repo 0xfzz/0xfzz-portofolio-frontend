@@ -3,11 +3,12 @@ import { Badge } from "@/components/ui/badge";
 interface BlogHeaderProps {
   title: string;
   subtitle: string;
+  tags: string[];
+  activeTag: string;
+  onTagClick: (tag: string) => void;
 }
 
-const TAGS = ["TypeScript", "React", "Node.js", "PostgreSQL", "Docker", "Networking"];
-
-export function BlogHeader({ title, subtitle }: BlogHeaderProps) {
+export function BlogHeader({ title, subtitle, tags, activeTag, onTagClick }: BlogHeaderProps) {
   return (
     <div className="space-y-10 mb-10">
       <div className="space-y-5">
@@ -20,11 +21,18 @@ export function BlogHeader({ title, subtitle }: BlogHeaderProps) {
       </div>
 
       <div className="flex flex-wrap gap-4 pt-2">
-        {TAGS.map((tag) => (
+        {tags.map((tag) => (
           <Badge 
             key={tag}
             variant="secondary" 
-            className="bg-[#B2BDC8]/80 text-[#323235] border-none px-5 py-2 text-xs font-bold rounded-md"
+            onClick={() => onTagClick(tag)}
+            className={`
+              px-5 py-2 text-xs font-bold rounded-md transition-all cursor-pointer border-none
+              ${activeTag === tag 
+                ? "bg-[#777E65] text-white" 
+                : "bg-[#B2BDC8]/80 text-[#323235] hover:bg-[#B2BDC8]"
+              }
+            `}
           >
             {tag}
           </Badge>

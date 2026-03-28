@@ -1,0 +1,14 @@
+[
+  {
+    "title": "1st Winner of Bug Bounty 2023",
+    "issuer": "Kemdikbud",
+    "date": "AUG 2023",
+    "description": "Pengujian penetrasi terhadap situs web kloningan Kemdikbud. Menemukan SQL Injection, Information Disclosure, dan Unrestricted File Upload."
+  },
+  {
+    "title": "3rd Winner of LKS Web Technology 2022",
+    "issuer": "Daerah Istimewa Yogyakarta",
+    "date": "MAY 2022",
+    "description": "Membangun situs web penyaji data IMDb menggunakan scraping JavaScript. Tech stack: Nest.js (Backend) dan Nuxt.js (Frontend)."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "title": "Core Tech Stack",
+  "subtitle": "My toolkit is focused on type-safety, modularity, and high-performance cloud infrastructure.",
+  "skills": {
+    "hard": [
+      "PHP",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "Docker",
+      "Azure"
+    ],
+    "soft": [
+      "Leadership",
+      "Communication",
+      "Problem Solving",
+      "Team Collaboration"
+    ],
+    "tools": [
+      "VS Code",
+      "Git",
+      "JIRA",
+      "Figma"
+    ]
+  },
+  "expertise": []
+}
