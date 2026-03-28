@@ -1,33 +1,30 @@
-import Image from "next/image";
-import { Badge } from "./ui/badge";
+import { ProjectCard } from "./ProjectCard";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { Github, ExternalLink } from "lucide-react";
 
-const PROJECTS = [
+const PROJECTS: any[] = [
   {
     title: "Quantum API Engine",
     description: "High-throughput GraphQL engine built for real-time financial data processing, utilizing Rust and Node.js workers.",
     image: "https://picsum.photos/seed/quantum/800/450",
     status: "OPEN SOURCE",
-    github: "#",
-    demo: "#",
+    type: "open-source",
+    slug: "quantum-api-engine",
   },
   {
     title: "Nexus CRM Platform",
     description: "Enterprise-grade CRM with automated lead scoring and integrated machine learning models for churn prediction.",
     image: "https://picsum.photos/seed/nexus/800/450",
     status: "ACTIVE PROJECT",
-    github: "#",
-    demo: "#",
+    type: "public",
+    slug: "nexus-crm-platform",
   },
   {
     title: "BlockTrace Core",
     description: "Distributed ledger verification system for supply chain transparency, featuring Dockerized validator nodes.",
     image: "https://picsum.photos/seed/trace/800/450",
-    status: "DEPLOYED",
-    github: "#",
-    demo: "#",
+    status: "NDA PROTECTED",
+    type: "private",
+    slug: "blocktrace-core",
   },
 ];
 
@@ -47,30 +44,7 @@ export function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project) => (
-            <Card key={project.title} className="group overflow-hidden border-border/40 shadow-sm transition-all duration-500 bg-background">
-              <div className="relative aspect-video overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <CardHeader className="p-6 pb-4">
-                <CardTitle className="text-xl font-bold tracking-tight">{project.title}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed text-muted-foreground pt-2">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="px-6 py-4 flex items-center justify-between border-t border-border/40 mt-auto">
-                 <Button variant="ghost" size="sm" className="h-auto p-0 gap-2 text-xs font-bold text-foreground hover:bg-transparent">
-                    <span className="opacity-60">&lt;&gt;</span> View on GitHub
-                 </Button>
-                 <Badge variant="outline" className="text-[9px] font-extrabold tracking-[0.2em] px-2 py-0.5 border-border/60 text-muted-foreground/50 rounded-sm">
-                   {project.status}
-                 </Badge>
-              </CardFooter>
-            </Card>
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
       </div>

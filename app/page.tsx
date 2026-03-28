@@ -9,8 +9,12 @@ export default function Home() {
     <main className="relative flex flex-col text-foreground">
       <Navbar />
       <Hero />
-      <TechStack />
-      <Projects />
+      <div id="tech-stack">
+        <TechStack />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
       <Footer />
     </main>
   );
