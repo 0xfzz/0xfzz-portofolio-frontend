@@ -8,9 +8,16 @@ import { Article } from "@/lib/content";
 interface BlogListProps {
   articles: Article[];
   uniqueTags: string[];
+  title?: string;
+  subtitle?: string;
 }
 
-export function BlogList({ articles, uniqueTags }: BlogListProps) {
+export function BlogList({ 
+  articles, 
+  uniqueTags, 
+  title = "Writing & Insights", 
+  subtitle = "Deep dives into software architecture, security research, and the future of distributed systems." 
+}: BlogListProps) {
   const [selectedTag, setSelectedTag] = useState("All");
 
   const filteredArticles = selectedTag === "All" 
@@ -20,8 +27,8 @@ export function BlogList({ articles, uniqueTags }: BlogListProps) {
   return (
     <>
       <BlogHeader 
-        title="Writing & Insights"
-        subtitle="Deep dives into software architecture, security research, and the future of distributed systems."
+        title={title}
+        subtitle={subtitle}
         tags={uniqueTags}
         activeTag={selectedTag}
         onTagClick={setSelectedTag}

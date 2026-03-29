@@ -1,25 +1,28 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { ProjectList } from "@/components/projects/ProjectList";
-import { getProjects, getLandingPageData } from "@/lib/content";
+import { getProjects, getSiteConfig } from "@/lib/content";
+import { notFound } from "next/navigation";
 
 export default async function ProjectsPage() {
-  const projects = await getProjects();
-  const landingData = await getLandingPageData();
+  const siteConfig = await getSiteConfig();
 
-  // Extract unique tags and sort them
-  const allTags = projects.flatMap(project => project.tags);
-  const uniqueTags = ["All", ...Array.from(new Set(allTags)).sort()];
+  if (siteConfig.visibility?.projects === false) {
+    notFound();
+  }
+
+  const projects = await getProjects();
+
+  // Extract unique technologies and sort them
+  const allTech = projects.flatMap(project => project.technologies);
+  const uniqueTags = ["All", ...Array.from(new Set(allTech)).sort()];
 
   return (
-    <main className="min-h-screen bg-[#FCF8F9]">
-      <Navbar />
-      
-      <div className="pt-40 pb-24 container mx-auto px-4 max-w-7xl">
-        <ProjectList projects={projects} uniqueTags={uniqueTags} />
-      </div>
-
-      <Footer data={landingData.footer} />
-    </main>
+    <div className="pt-40 pb-24 container mx-auto px-4 max-w-7xl">
+      <ProjectList 
+        projects={projects} 
+        uniqueTags={uniqueTags} 
+        title={siteConfig.pages?.projects?.title}
+        subtitle={siteConfig.pages?.projects?.subtitle}
+      />
+    </div>
   );
 }

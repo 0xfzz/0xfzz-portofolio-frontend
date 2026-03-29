@@ -6,7 +6,17 @@ interface FooterData {
   tagline: string;
 }
 
-export function Footer({ data }: { data?: FooterData }) {
+interface FooterProps {
+  data?: FooterData;
+  visibility?: {
+    projects?: boolean;
+    experiences?: boolean;
+    blog?: boolean;
+    contact?: boolean;
+  };
+}
+
+export function Footer({ data, visibility }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const copyrightText = data?.copyright.replace("{year}", currentYear.toString()) || `© ${currentYear} 0xfzz. Built with love.`;
 

@@ -14,8 +14,26 @@ const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  visibility?: {
+    projects?: boolean;
+    experiences?: boolean;
+    blog?: boolean;
+    contact?: boolean;
+  };
+}
+
+export function Navbar({ visibility }: NavbarProps) {
   const pathname = usePathname();
+
+  const activeLinks = NAV_LINKS.filter(link => {
+    if (link.href === "/") return true;
+    if (link.href === "/projects") return visibility?.projects !== false;
+    if (link.href === "/experiences") return visibility?.experiences !== false;
+    if (link.href === "/blog") return visibility?.blog !== false;
+    if (link.href === "/contact") return visibility?.contact !== false;
+    return true;
+  });
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-border/40">
@@ -29,7 +47,7 @@ export function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => {
+          {activeLinks.map((link) => {
             // Home is only active if the pathname is exactly /
             // Exceptions: /#projects (anchors on the home page)
             const isActive = link.href === "/" 

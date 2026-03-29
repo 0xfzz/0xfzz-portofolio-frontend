@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "0xfzz | Faiz Nurdiana - Portfolio",
+    "description": "Web Developer and Cybersecurity Enthusiast based in Yogyakarta."
+  },
+  "visibility": {
+    "projects": true,
+    "experiences": true,
+    "blog": true,
+    "contact": true,
+    "techStack": true
+  },
+  "hero": {
+    "title": "Hi, I'm Faiz.",
+    "subtitle": "Software Engineer specializing in Backend Development and Cybersecurity. Experienced in building efficient, secure web applications and conducting penetration tests."
+  },
+  "footer": {
+    "copyright": "© 2026 0xfzz. Built with luvv.",
+    "tagline": "Architecting the future, one byte at a time."
+  },
+  "collaborating": {
+    "title": "Interested in collaborating?",
+    "description": "I am always open to discussing architecture or potential leadership opportunities.",
+    "primaryActionLabel": "Download CV",
+    "secondaryActionLabel": "Get in Touch"
+  },
+  "pages": {
+    "projects": {
+      "title": "Projects That I've Made",
+      "subtitle": "A curated selection of technical challenges, experimental systems, and functional applications built with modern stacks."
+    },
+    "blog": {
+      "title": "Writing & Insights",
+      "subtitle": "Deep dives into software architecture, security research, and the future of distributed systems."
+    },
+    "experiences": {
+      "title": "Experience",
+      "subtitle": "Software Engineer specializing in Backend and Cybersecurity. From winning bug bounties to architecting secure systems.",
+      "sections": {
+        "work": "Work Experience",
+        "education": "Education",
+        "awards": "Awards"
+      }
+    }
+  }
+}

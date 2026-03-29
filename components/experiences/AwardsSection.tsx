@@ -5,11 +5,17 @@ interface AwardItemProps {
   description: string;
 }
 
-export function AwardsSection({ data }: { data: AwardItemProps[] }) {
+export function AwardsSection({ 
+  data, 
+  title = "Awards & Recognitions" 
+}: { 
+  data: AwardItemProps[], 
+  title?: string 
+}) {
   return (
     <div className="mb-32">
       <h4 className="text-[0.75rem] font-extrabold tracking-widest text-[#323235] uppercase mb-10">
-        Awards & Recognitions
+        {title}
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {data.map((award, index) => (

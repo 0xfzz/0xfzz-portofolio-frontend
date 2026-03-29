@@ -7,7 +7,7 @@ interface BlogDetailHeaderProps {
   tags: string[];
   date: string;
   title: string;
-  image: string;
+  image?: string;
 }
 
 export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderProps) {
@@ -46,17 +46,19 @@ export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderP
         </div>
       </div>
 
-      <div className="container mx-auto max-w-5xl">
-        <div className="relative aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-border/50">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover"
-            priority
-          />
+      {image && (
+        <div className="container mx-auto max-w-5xl">
+          <div className="relative aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-border/50">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

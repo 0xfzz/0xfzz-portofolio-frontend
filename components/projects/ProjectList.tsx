@@ -8,20 +8,27 @@ import { Project } from "@/lib/content";
 interface ProjectListProps {
   projects: Project[];
   uniqueTags: string[];
+  title?: string;
+  subtitle?: string;
 }
 
-export function ProjectList({ projects, uniqueTags }: ProjectListProps) {
+export function ProjectList({ 
+  projects, 
+  uniqueTags, 
+  title = "Projects That I've Made", 
+  subtitle = "A curated selection of technical challenges, experimental systems, and functional applications built with modern stacks." 
+}: ProjectListProps) {
   const [selectedTag, setSelectedTag] = useState("All");
 
   const filteredProjects = selectedTag === "All" 
     ? projects 
-    : projects.filter(project => project.tags.includes(selectedTag));
+    : projects.filter(project => project.technologies.includes(selectedTag));
 
   return (
     <>
       <ProjectsHeader 
-        title="Projects That I've Made"
-        subtitle="A curated selection of technical challenges, experimental systems, and functional applications built with modern stacks."
+        title={title}
+        subtitle={subtitle}
         tags={uniqueTags}
         activeTag={selectedTag}
         onTagClick={setSelectedTag}

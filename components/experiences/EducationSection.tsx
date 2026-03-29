@@ -5,11 +5,17 @@ interface EducationItemProps {
   location: string;
 }
 
-export function EducationSection({ data }: { data: EducationItemProps[] }) {
+export function EducationSection({ 
+  data, 
+  title = "Education" 
+}: { 
+  data: EducationItemProps[], 
+  title?: string 
+}) {
   return (
     <div className="mb-32">
       <h4 className="text-[0.75rem] font-extrabold tracking-widest text-[#323235] uppercase mb-10">
-        Education
+        {title}
       </h4>
       <div className="space-y-12">
         {data.map((edu, index) => (

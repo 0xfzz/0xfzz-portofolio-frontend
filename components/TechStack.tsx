@@ -6,6 +6,21 @@ import {
   ShieldCheck, 
   Gauge, 
   BarChart3,
+  Code2,
+  Terminal,
+  Cpu,
+  Globe,
+  Server,
+  HardDrive,
+  Smartphone,
+  Layout,
+  Palette,
+  Search,
+  Lock,
+  Zap,
+  Settings,
+  Activity,
+  Infinity as InfinityIcon,
   LucideIcon
 } from "lucide-react";
 
@@ -16,6 +31,21 @@ const ICON_MAP: Record<string, LucideIcon> = {
   ShieldCheck,
   Gauge,
   BarChart3,
+  Code2,
+  Terminal,
+  Cpu,
+  Globe,
+  Server,
+  HardDrive,
+  Smartphone,
+  Layout,
+  Palette,
+  Search,
+  Lock,
+  Zap,
+  Settings,
+  Activity,
+  Infinity: InfinityIcon,
 };
 
 interface TechStackProps {

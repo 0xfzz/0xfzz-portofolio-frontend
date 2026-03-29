@@ -99,7 +99,7 @@ async function getMarkdownBySlug<T>(directory: string, slug: string): Promise<T 
 
 // --- PUBLIC API ---
 
-export const getLandingPageData = () => getJsonFile<any>("landing-page.json");
+export const getSiteConfig = () => getJsonFile<any>("site-config.json");
 export const getExperiencesData = () => getJsonFile<any[]>("experiences/work_experiences.json");
 export const getContactData = () => getJsonFile<any>("contact.json");
 export const getTechStackData = () => getJsonFile<any>("tech-stack.json");
@@ -111,29 +111,36 @@ export interface Article {
   date: string;
   tags: string[];
   slug: string;
-  image: string;
+  image?: string;
   excerpt: string;
   body: string;
   contentHtml?: string;
-  language?: string;
+  published?: boolean;
 }
 
-export const getArticles = () => getMarkdownFiles<Article>("blog");
+export const getArticles = async () => {
+  const articles = await getMarkdownFiles<Article>("blog");
+  return articles.filter(article => article.published !== false);
+};
+
 export const getArticleBySlug = (slug: string) => getMarkdownBySlug<Article>("blog", slug);
 
 export interface Project {
   title: string;
   description: string;
-  image: string;
-  images?: string[];
+  image?: string;
   slug: string;
-  tags: string[];
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
   body: string;
   contentHtml?: string;
+  published?: boolean;
 }
 
-export const getProjects = () => getMarkdownFiles<Project>("projects");
+export const getProjects = async () => {
+  const projects = await getMarkdownFiles<Project>("projects");
+  return projects.filter(project => project.published !== false);
+};
+
 export const getProjectBySlug = (slug: string) => getMarkdownBySlug<Project>("projects", slug);
