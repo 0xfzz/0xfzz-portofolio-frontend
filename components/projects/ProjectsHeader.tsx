@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { PageHeader } from "../layout/PageHeader";
 
 interface ProjectsHeaderProps {
   title: string;
@@ -10,17 +11,8 @@ interface ProjectsHeaderProps {
 
 export function ProjectsHeader({ title, subtitle, tags, activeTag, onTagClick }: ProjectsHeaderProps) {
   return (
-    <div className="space-y-10 mb-10">
-      <div className="space-y-5">
-        <h1 className="text-4xl md:text-[4.5rem] font-bold tracking-tight text-[#323235] leading-[1.1]">
-          {title}
-        </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl font-medium">
-          {subtitle}
-        </p>
-      </div>
-
-      <div className="flex flex-wrap gap-4 pt-2">
+    <PageHeader title={title} subtitle={subtitle}>
+      <div className="flex flex-wrap gap-4">
         {tags.map((tag) => (
           <Badge 
             key={tag}
@@ -38,6 +30,6 @@ export function ProjectsHeader({ title, subtitle, tags, activeTag, onTagClick }:
           </Badge>
         ))}
       </div>
-    </div>
+    </PageHeader>
   );
 }

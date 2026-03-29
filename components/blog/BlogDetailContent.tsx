@@ -4,7 +4,7 @@ interface BlogDetailContentProps {
 
 export function BlogDetailContent({ children }: BlogDetailContentProps) {
   return (
-    <div className="prose prose-lg max-w-none prose-headings:text-[#323235] prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-[#323235] first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-[#323235] first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]">
+    <div className="prose prose-lg max-w-3xl mx-auto px-4 prose-headings:text-[#323235] prose-headings:font-bold prose-p:text-[#323235]/80 prose-p:leading-relaxed prose-strong:text-[#323235] prose-a:text-[#777E65] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
       {children}
     </div>
   );

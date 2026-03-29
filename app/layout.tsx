@@ -14,7 +14,7 @@ const firaCode = Fira_Code({
   variable: "--font-fira-code",
 });
 
-import { getSiteConfig } from "@/lib/content";
+import { getSiteConfig, getResumeData, getContactData } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const siteConfig = await getSiteConfig();
@@ -39,13 +39,23 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const siteConfig = await getSiteConfig();
+  const resumeData = await getResumeData();
+  const contactData = await getContactData();
   
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${firaCode.variable} font-sans antialiased text-foreground bg-background`}>
-        <Navbar visibility={siteConfig.visibility} />
+        <Navbar 
+          title={siteConfig.metadata.title} 
+          visibility={siteConfig.visibility} 
+          resumeData={resumeData} 
+        />
         {children}
-        <Footer data={siteConfig.footer} visibility={siteConfig.visibility} />
+        <Footer 
+          data={siteConfig.footer} 
+          contacts={contactData.methods}
+          visibility={siteConfig.visibility} 
+        />
       </body>
     </html>
   );

@@ -2,18 +2,19 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Download, ExternalLink } from "lucide-react";
+import { DownloadCVButton } from "./resume/DownloadCVButton";
 
 interface HeroData {
   title: string;
   subtitle: string;
 }
 
-export function Hero({ data }: { data: HeroData }) {
+export function Hero({ data, resumeData, resumeLabel }: { data: HeroData; resumeData: any; resumeLabel: string }) {
   return (
     <section className="pt-32 pb-16 md:pt-48 md:pb-32">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="max-w-2xl text-left">
-          <Badge variant="secondary" className="mb-4 uppercase tracking-widest px-3 py-1 text-[10px] font-bold bg-muted-foreground/20 text-muted-foreground border-none">
+          <Badge variant="secondary" className="mb-4 uppercase tracking-wider px-3 py-1 text-[13px] font-bold bg-muted-foreground/20 text-muted-foreground border-none">
             Available For Work
           </Badge>
           <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tight leading-[1.1] text-foreground">
@@ -23,13 +24,7 @@ export function Hero({ data }: { data: HeroData }) {
             {data.subtitle}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" variant="secondary" className="rounded-md gap-2 px-8 font-semibold">
-              <Download className="w-4 h-4" />
-              Download CV
-            </Button>
-            <Button variant="accent" size="lg" className="rounded-md gap-2 px-8 font-semibold bg-accent">
-              View Portfolio
-            </Button>
+            <DownloadCVButton data={resumeData} label={resumeLabel} />
           </div>
         </div>
 

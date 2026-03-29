@@ -14,7 +14,7 @@ export function EducationSection({
 }) {
   return (
     <div className="mb-32">
-      <h4 className="text-[0.75rem] font-extrabold tracking-widest text-[#323235] uppercase mb-10">
+      <h4 className="text-[13px] font-bold tracking-wider text-[#323235] uppercase mb-10">
         {title}
       </h4>
       <div className="space-y-12">
@@ -26,7 +26,7 @@ export function EducationSection({
             </div>
             <div className="text-right md:text-right">
               <p className="text-[#323235]/70 text-sm font-bold">{edu.period}</p>
-              <p className="text-muted-foreground text-[0.7rem] uppercase tracking-wider">{edu.location}</p>
+              <p className="text-muted-foreground text-[12px] uppercase tracking-wider">{edu.location}</p>
             </div>
           </div>
         ))}

@@ -100,7 +100,8 @@ async function getMarkdownBySlug<T>(directory: string, slug: string): Promise<T 
 // --- PUBLIC API ---
 
 export const getSiteConfig = () => getJsonFile<any>("site-config.json");
-export const getExperiencesData = () => getJsonFile<any[]>("experiences/work_experiences.json");
+export const getExperiencesData = () => getJsonFile<any[]>("experiences/work-experiences.json");
+export const getOtherExperiencesData = () => getJsonFile<any[]>("experiences/other-experiences.json");
 export const getContactData = () => getJsonFile<any>("contact.json");
 export const getTechStackData = () => getJsonFile<any>("tech-stack.json");
 export const getEducationData = () => getJsonFile<any[]>("experiences/education.json");
@@ -144,3 +145,28 @@ export const getProjects = async () => {
 };
 
 export const getProjectBySlug = (slug: string) => getMarkdownBySlug<Project>("projects", slug);
+
+export async function getResumeData() {
+  const [siteConfig, experiences, otherExperiences, education, awards, contact, techStack] = await Promise.all([
+    getSiteConfig(),
+    getExperiencesData(),
+    getOtherExperiencesData(),
+    getEducationData(),
+    getAwardsData(),
+    getContactData(),
+    getTechStackData(),
+  ]);
+
+  return {
+    name: siteConfig.metadata.name,
+    title: siteConfig.hero.subtitle.split('.')[0] + '.',
+    contact,
+    summary: siteConfig.hero.subtitle,
+    work: experiences,
+    otherExperiences: otherExperiences,
+    education,
+    skills: techStack.skills,
+    awards,
+    label: siteConfig.collaborating.primaryActionLabel,
+  };
+}

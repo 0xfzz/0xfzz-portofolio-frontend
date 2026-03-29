@@ -12,11 +12,11 @@ interface BlogDetailHeaderProps {
 
 export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderProps) {
   return (
-    <div className="space-y-12 mb-16 px-4">
-      <div className="container mx-auto max-w-4xl space-y-8">
+    <div className="space-y-12 mb-16">
+      <div className="max-w-3xl mx-auto space-y-8 px-4">
         <Link 
           href="/blog" 
-          className="inline-flex items-center gap-2 text-xs font-bold text-muted-foreground hover:text-[#323235] transition-colors group"
+          className="inline-flex items-center gap-2 text-sm font-bold text-[#323235]/60 hover:text-[#323235] transition-colors group"
         >
           <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           Back to Blog
@@ -29,26 +29,26 @@ export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderP
                 <Badge 
                   key={tag}
                   variant="secondary" 
-                  className="bg-[#B2BDC8]/80 text-[#323235] border-none px-3 py-1 text-[9px] font-bold uppercase tracking-widest rounded-sm"
+                  className="bg-[#B2BDC8]/40 text-[#323235] border-none px-3 py-1 text-[13px] font-bold uppercase tracking-wider rounded-sm"
                 >
                   {tag}
                 </Badge>
               ))}
             </div>
-            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
+            <span className="text-sm font-bold text-[#323235]/60 uppercase tracking-widest whitespace-nowrap">
               {date}
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-[#323235] leading-[1.05]">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#323235] leading-tight">
             {title}
           </h1>
         </div>
       </div>
 
       {image && (
-        <div className="container mx-auto max-w-5xl">
-          <div className="relative aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-border/50">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-border/40">
             <Image
               src={image}
               alt={title}

@@ -9,7 +9,7 @@ interface ProjectSidebarProps {
 export function ProjectSidebar({ liveUrl, githubUrl }: ProjectSidebarProps) {
   return (
     <div className="space-y-6">
-      <h4 className="text-[10px] font-extrabold text-[#323235] uppercase tracking-[0.2em] opacity-40">
+      <h4 className="text-sm font-bold text-[#323235] uppercase tracking-wider opacity-80">
         Core Actions
       </h4>
       <div className="flex flex-col gap-3">

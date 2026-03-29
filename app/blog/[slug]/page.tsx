@@ -2,6 +2,7 @@ import { BlogDetailHeader } from "@/components/blog/BlogDetailHeader";
 import { BlogDetailContent } from "@/components/blog/BlogDetailContent";
 import { getArticleBySlug, getSiteConfig } from "@/lib/content";
 import { notFound } from "next/navigation";
+import { PageContainer } from "@/components/layout/PageContainer";
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -13,19 +14,19 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   }
 
   return (
-    <article className="pt-32 pb-24">
-      <BlogDetailHeader 
-        title={article.title}
-        date={article.date}
-        tags={article.tags}
-        image={article.image}
-      />
+    <PageContainer>
+      <article>
+        <BlogDetailHeader 
+          title={article.title}
+          date={article.date}
+          tags={article.tags}
+          image={article.image}
+        />
 
-      <div className="container mx-auto px-4 max-w-3xl">
         <BlogDetailContent>
-          <div dangerouslySetInnerHTML={{ __html: article.contentHtml || "" }} className="prose prose-lg max-w-none" />
+          <div dangerouslySetInnerHTML={{ __html: article.contentHtml || "" }} />
         </BlogDetailContent>
-      </div>
-    </article>
+      </article>
+    </PageContainer>
   );
 }

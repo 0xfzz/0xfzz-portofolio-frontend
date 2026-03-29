@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { DownloadCVButton } from "./resume/DownloadCVButton";
 
 import { usePathname } from "next/navigation";
 
@@ -15,15 +16,17 @@ const NAV_LINKS = [
 ];
 
 interface NavbarProps {
+  title: string;
   visibility?: {
     projects?: boolean;
     experiences?: boolean;
     blog?: boolean;
     contact?: boolean;
   };
+  resumeData: any;
 }
 
-export function Navbar({ visibility }: NavbarProps) {
+export function Navbar({ title, visibility, resumeData }: NavbarProps) {
   const pathname = usePathname();
 
   const activeLinks = NAV_LINKS.filter(link => {
@@ -43,7 +46,7 @@ export function Navbar({ visibility }: NavbarProps) {
           className="text-xl font-bold tracking-tight text-foreground font-mono"
           style={{ fontFamily: 'var(--font-fira-code), monospace' }}
         >
-          0xfzz
+          {title}
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
@@ -73,9 +76,13 @@ export function Navbar({ visibility }: NavbarProps) {
           })}
         </div>
 
-        <Button variant="secondary" size="sm" className="rounded-md px-5 font-semibold">
-          Resume
-        </Button>
+        <DownloadCVButton 
+          data={resumeData} 
+          label={resumeData.label} 
+          size="sm" 
+          variant="secondary" 
+          showIcon={false} 
+        />
       </div>
     </nav>
   );

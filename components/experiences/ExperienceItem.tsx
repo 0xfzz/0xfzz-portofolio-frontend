@@ -35,7 +35,7 @@ export function ExperienceItem({ role, company, period, description, tags }: Exp
           <Badge 
             key={tag} 
             variant="secondary" 
-            className="bg-[#f3f4f6] text-[#5F5F61] border-none px-3 py-0.5 text-[0.7rem] font-bold tracking-tight rounded-md"
+            className="bg-[#f3f4f6] text-[#5F5F61] border-none px-3 py-0.5 text-[12px] font-bold rounded-md"
           >
             {tag}
           </Badge>

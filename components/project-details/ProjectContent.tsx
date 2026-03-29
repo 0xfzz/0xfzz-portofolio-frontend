@@ -28,14 +28,14 @@ export function ProjectContent({ technologies, children }: ProjectContentProps) 
       </div>
 
       <section className="pt-8 border-t border-border/40">
-        <h4 className="text-[10px] font-extrabold text-[#323235] uppercase tracking-[0.2em] opacity-40 mb-6">
+        <h4 className="text-sm font-bold text-[#323235] uppercase tracking-wider opacity-80 mb-6">
           Technologies Leveraged
         </h4>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
             <span 
               key={tech}
-              className="px-4 py-2 bg-[#E9F0FA] text-[#4A72B2] text-xs font-bold rounded-md"
+              className="px-3 py-1 bg-muted-foreground/15 text-muted-foreground text-[12px] font-bold rounded-md uppercase tracking-wide"
             >
               {tech}
             </span>

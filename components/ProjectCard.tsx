@@ -27,7 +27,7 @@ export function ProjectCard({ title, description, image, slug, technologies }: P
               <Badge 
                 key={tech}
                 variant="secondary" 
-                className="bg-[#B2BDC8] text-[#323235] border-none px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-sm"
+                className="bg-[#B2BDC8] text-[#323235] border-none px-3 py-1 text-[12px] font-bold uppercase tracking-wider rounded-sm shadow-sm"
               >
                 {tech}
               </Badge>
@@ -63,7 +63,7 @@ export function ProjectCard({ title, description, image, slug, technologies }: P
         <div className="pt-4 border-t border-border/40">
           <Link 
             href={`/projects/${slug}`}
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#323235] uppercase tracking-widest hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#323235] uppercase tracking-wider hover:gap-3 transition-all"
           >
             <Code2 className="w-4 h-4 opacity-70" />
             View Details

@@ -1,6 +1,7 @@
 import { BlogList } from "@/components/blog/BlogList";
 import { getArticles, getSiteConfig } from "@/lib/content";
 import { notFound } from "next/navigation";
+import { PageContainer } from "@/components/layout/PageContainer";
 
 export default async function BlogPage() {
   const siteConfig = await getSiteConfig();
@@ -16,13 +17,13 @@ export default async function BlogPage() {
   const uniqueTags = ["All", ...Array.from(new Set(allTags)).sort()];
 
   return (
-    <div className="pt-40 pb-24 container mx-auto px-4 max-w-7xl">
+    <PageContainer>
       <BlogList 
         articles={articles} 
         uniqueTags={uniqueTags} 
         title={siteConfig.pages?.blog?.title}
         subtitle={siteConfig.pages?.blog?.subtitle}
       />
-    </div>
+    </PageContainer>
   );
 }

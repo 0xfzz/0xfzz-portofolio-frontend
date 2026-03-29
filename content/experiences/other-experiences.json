@@ -1,0 +1,50 @@
+[
+    {
+        "role": "Ketua Divisi Ristek",
+        "company": "HIMATIKA UTY",
+        "period": "2023 - Present",
+        "description": [
+            "Leading the Research and Technology division of the Informatics Student Association.",
+            "Coordinating technical workshops, seminars, and internal innovation projects for students.",
+            "Managing division members and aligning technological initiatives with organizational goals."
+        ],
+        "tags": [
+            "Leadership",
+            "Research",
+            "Technology",
+            "Coordination"
+        ]
+    },
+    {
+        "role": "Developer",
+        "company": "PKM 2025 (Arbhita)",
+        "period": "2024 - 2025",
+        "description": [
+            "Developing and managing 'Arbhita', a platform initiated for the Program Kreativitas Mahasiswa (PKM) 2025.",
+            "Focusing on innovative solutions and technical implementation of the project requirements.",
+            "Official link: https://www.arbhita.web.id/"
+        ],
+        "tags": [
+            "Web Development",
+            "Innovation",
+            "PKM",
+            "Project Management"
+        ]
+    },
+    {
+        "role": "Asisten Dosen",
+        "company": "Universitas Teknologi Yogyakarta (UTY)",
+        "period": "2024 - 2025",
+        "description": [
+            "Assisting lecturers in conducting laboratory sessions and grading assignments for various technical courses.",
+            "Providing guidance and tutoring to students in: Keamanan Jaringan (Network Security), Jaringan Komputer (Computer Networks), and Web Desain (Web Design)"
+        ],
+        "tags": [
+            "Teaching",
+            "Network Security",
+            "Computer Networks",
+            "Web Design",
+            "Mentorship"
+        ]
+    }
+]

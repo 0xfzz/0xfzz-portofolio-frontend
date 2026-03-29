@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { BlogCard } from "./BlogCard";
 import { BlogHeader } from "./BlogHeader";
-import { Article } from "@/lib/content";
+import type { Article } from "@/lib/content";
 
 interface BlogListProps {
   articles: Article[];

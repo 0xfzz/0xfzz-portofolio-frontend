@@ -104,7 +104,7 @@ export function TechStack({ data }: TechStackProps) {
                 <div className="mb-6">
                   <Icon className="w-8 h-8 text-[#323235] opacity-80" />
                 </div>
-                <h3 className="text-xs font-bold tracking-tight text-[#323235]">
+                <h3 className="text-sm font-bold text-[#323235]">
                   {item.title}
                 </h3>
               </div>

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { getContactData, getSiteConfig } from "@/lib/content";
 import { notFound } from "next/navigation";
+import { PageContainer } from "@/components/layout/PageContainer";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   Github,
@@ -34,6 +35,8 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Telegram: Send,
 };
 
+import { PageHeader } from "@/components/layout/PageHeader";
+
 export default async function ContactPage() {
   const siteConfig = await getSiteConfig();
 
@@ -44,15 +47,11 @@ export default async function ContactPage() {
   const contactData = await getContactData();
 
   return (
-    <div className="pt-40 pb-24 container mx-auto px-4 max-w-5xl">
-      <div className="text-center space-y-6 mb-20">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#323235]">
-          {contactData.title}
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-          {contactData.subtitle}
-        </p>
-      </div>
+    <PageContainer>
+      <PageHeader 
+        title={contactData.title}
+        subtitle={contactData.subtitle}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {contactData.methods.map((method: any) => {
@@ -68,6 +67,6 @@ export default async function ContactPage() {
           );
         })}
       </div>
-    </div>
+    </PageContainer>
   );
 }
