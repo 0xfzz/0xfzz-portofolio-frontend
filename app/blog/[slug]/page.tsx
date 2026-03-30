@@ -1,8 +1,47 @@
 import { BlogDetailHeader } from "@/components/blog/BlogDetailHeader";
 import { BlogDetailContent } from "@/components/blog/BlogDetailContent";
-import { getArticleBySlug, getSiteConfig } from "@/lib/content";
+import { getArticleBySlug, getArticles, getSiteConfig } from "@/lib/content";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
+import type { Metadata } from 'next';
+
+export async function generateStaticParams() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await getArticleBySlug(slug);
+  const siteConfig = await getSiteConfig();
+
+  if (!article || siteConfig.visibility?.blog === false) {
+    return {
+      title: 'Article Not Found',
+    };
+  }
+
+  return {
+    title: `${article.title} | ${siteConfig.metadata.name}`,
+    description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: 'article',
+      publishedTime: article.date,
+      authors: [siteConfig.metadata.name],
+      images: article.image ? [{ url: article.image }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: article.image ? [article.image] : undefined,
+    },
+  };
+}
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

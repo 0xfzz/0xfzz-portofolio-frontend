@@ -3,12 +3,42 @@ import { getProjectBySlug, getProjects, getSiteConfig } from "@/lib/content";
 import { ProjectHeader } from "@/components/project-details/ProjectHeader";
 import { ProjectSidebar } from "@/components/project-details/ProjectSidebar";
 import { ProjectContent } from "@/components/project-details/ProjectContent";
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const projects = await getProjects();
   return projects.map((project) => ({
     slug: project.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+  const siteConfig = await getSiteConfig();
+
+  if (!project || siteConfig.visibility?.projects === false) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title} | ${siteConfig.metadata.name}`,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: 'article',
+      images: project.image ? [{ url: project.image }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.description,
+      images: project.image ? [project.image] : undefined,
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
