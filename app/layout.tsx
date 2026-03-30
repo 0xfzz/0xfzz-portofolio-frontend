@@ -33,6 +33,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import MermaidLoader from "@/components/MermaidLoader";
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -41,21 +43,23 @@ export default async function RootLayout({
   const siteConfig = await getSiteConfig();
   const resumeData = await getResumeData();
   const contactData = await getContactData();
-  
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${firaCode.variable} font-sans antialiased text-foreground bg-background`}>
-        <Navbar 
-          title={siteConfig.metadata.title} 
-          visibility={siteConfig.visibility} 
-          resumeData={resumeData} 
+        <Navbar
+          title={siteConfig.metadata.title}
+          navigation={siteConfig.navigation}
+          visibility={siteConfig.visibility}
+          resumeData={resumeData}
         />
         {children}
-        <Footer 
-          data={siteConfig.footer} 
+        <Footer
+          data={siteConfig.footer}
           contacts={contactData.methods}
-          visibility={siteConfig.visibility} 
+          visibility={siteConfig.visibility}
         />
+        <MermaidLoader />
       </body>
     </html>
   );

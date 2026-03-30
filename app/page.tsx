@@ -28,7 +28,7 @@ export default async function Home() {
       <Hero 
         data={siteConfig.hero} 
         resumeData={resumeData} 
-        resumeLabel={siteConfig.collaborating.primaryActionLabel} 
+        resumeLabel="Download Resume" 
       />
       {siteConfig.visibility?.techStack !== false && (
         <div id="tech-stack">
@@ -37,7 +37,11 @@ export default async function Home() {
       )}
       {siteConfig.visibility?.projects !== false && (
         <div id="projects">
-          <Projects projects={projects} />
+          <Projects 
+            projects={projects} 
+            title={siteConfig.pages?.home?.projects?.title}
+            subtitle={siteConfig.pages?.home?.projects?.subtitle}
+          />
         </div>
       )}
     </main>

@@ -1,7 +1,7 @@
 "use client";
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { ResumePDF } from "./ResumePDF";
+import { ResumePDF } from "@/lib/cv/ResumePDF";
 import { Button } from "../ui/button";
 import { Download } from "lucide-react";
 import { useEffect, useState } from "react";

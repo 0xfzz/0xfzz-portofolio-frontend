@@ -1,30 +1,15 @@
-import DOMPurify from "isomorphic-dompurify";
+import { MarkdownRenderer } from "@/components/ui/MarkdownRenderer";
 
 interface ProjectContentProps {
   technologies: string[];
-  children: React.ReactNode;
+  content: string;
 }
 
-export function ProjectContent({ technologies, children }: ProjectContentProps) {
+export function ProjectContent({ technologies, content }: ProjectContentProps) {
   return (
     <div className="space-y-16">
-      {/* 
-        Tailwind 4 'prose' styles for the markdown content.
-        We use prose-zinc to match the dark text, and prose-lg for editorial feel.
-      */}
-      <div className="prose prose-zinc prose-lg max-w-none 
-        prose-headings:text-[#323235] 
-        prose-headings:font-bold 
-        prose-p:text-muted-foreground 
-        prose-p:leading-relaxed 
-        prose-strong:text-[#323235]
-        prose-code:text-[#323235]
-        prose-pre:bg-[#F3F4F6]
-        prose-pre:text-[#323235]
-        prose-pre:border
-        prose-pre:border-border/50"
-      >
-        {children}
+      <div className="w-full">
+        <MarkdownRenderer content={content} />
       </div>
 
       <section className="pt-8 border-t border-border/40">

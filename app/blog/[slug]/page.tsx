@@ -23,9 +23,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           image={article.image}
         />
 
-        <BlogDetailContent>
-          <div dangerouslySetInnerHTML={{ __html: article.contentHtml || "" }} />
-        </BlogDetailContent>
+        <BlogDetailContent content={article.body} />
       </article>
     </PageContainer>
   );

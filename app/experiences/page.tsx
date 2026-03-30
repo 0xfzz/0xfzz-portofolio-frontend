@@ -68,7 +68,7 @@ export default async function ExperiencesPage() {
         data={awardsData} 
         title={siteConfig.pages?.experiences?.sections?.awards}
       />
-      <CollaboratingCTA {...siteConfig.collaborating} resumeData={resumeData} />
+      <CollaboratingCTA resumeData={resumeData} />
     </PageContainer>
   );
 }

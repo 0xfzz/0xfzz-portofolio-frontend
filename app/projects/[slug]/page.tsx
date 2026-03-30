@@ -29,7 +29,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         image={project.image}
       />
       
-      <div className="container mx-auto px-4 pb-32">
+      <div className="w-full max-w-6xl mx-auto px-4 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Column: Actions */}
           <aside className="lg:col-span-3">
@@ -43,11 +43,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div className="lg:col-span-9">
             <ProjectContent 
               technologies={project.technologies}
-            >
-              <div 
-                dangerouslySetInnerHTML={{ __html: project.contentHtml || "" }} 
-              />
-            </ProjectContent>
+              content={project.body}
+            />
           </div>
         </div>
       </div>

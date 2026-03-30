@@ -118,18 +118,10 @@ const cleanUrl = (url: string) => {
   return url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 };
 
+import { ResumeData } from "../types";
+
 interface ResumePDFProps {
-  data: {
-    name: string;
-    title: string;
-    contact: any;
-    summary: string;
-    work: any[];
-    otherExperiences: any[];
-    education: any[];
-    skills: any;
-    awards: any[];
-  };
+  data: ResumeData;
 }
 
 export function ResumePDF({ data }: ResumePDFProps) {

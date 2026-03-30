@@ -11,6 +11,13 @@
     "contact": true,
     "techStack": true
   },
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "experiences": "Experiences",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
   "hero": {
     "title": "Hi, I'm Faiz.",
     "subtitle": "Software Engineer specializing in Backend Development and Cybersecurity. Experienced in building efficient, secure web applications and conducting penetration tests."
@@ -19,12 +26,6 @@
     "copyright": "© 2026 0xfzz. Built with luvv.",
     "tagline": "Architecting the future, one byte at a time.",
     "contactCount": 2
-  },
-  "collaborating": {
-    "title": "Interested in collaborating?",
-    "description": "I am always open to discussing architecture or potential leadership opportunities.",
-    "primaryActionLabel": "Download Resume",
-    "secondaryActionLabel": "Get in Touch"
   },
   "pages": {
     "projects": {

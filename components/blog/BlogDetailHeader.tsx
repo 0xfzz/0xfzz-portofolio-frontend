@@ -13,7 +13,7 @@ interface BlogDetailHeaderProps {
 export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderProps) {
   return (
     <div className="space-y-12 mb-16">
-      <div className="max-w-3xl mx-auto space-y-8 px-4">
+      <div className="max-w-4xl mx-auto space-y-8 px-4">
         <Link 
           href="/blog" 
           className="inline-flex items-center gap-2 text-sm font-bold text-[#323235]/60 hover:text-[#323235] transition-colors group"
