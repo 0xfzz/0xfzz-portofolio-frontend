@@ -20,9 +20,9 @@ export async function getResumeData(): Promise<ResumeData> {
 
   return {
     name: siteConfig.metadata.name,
-    title: siteConfig.hero.subtitle.split('.')[0] + '.',
+    title: siteConfig.hero.subtitle,
     contact,
-    summary: siteConfig.hero.subtitle,
+    summary: siteConfig.hero.description,
     work: experiences,
     otherExperiences: otherExperiences,
     education,
