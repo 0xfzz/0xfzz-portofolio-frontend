@@ -22,7 +22,7 @@ export async function getResumeData(): Promise<ResumeData> {
     name: siteConfig.metadata.name,
     title: siteConfig.hero.subtitle,
     contact,
-    summary: siteConfig.hero.description,
+    summary: siteConfig.summary,
     work: experiences,
     otherExperiences: otherExperiences,
     education,

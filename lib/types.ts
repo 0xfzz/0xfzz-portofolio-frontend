@@ -25,7 +25,6 @@ export interface NavigationConfig {
 export interface HeroConfig {
   title: string;
   subtitle: string;
-  description: string;
 }
 
 export interface FooterConfig {
@@ -36,6 +35,7 @@ export interface FooterConfig {
 
 export interface SiteConfig {
   metadata: SiteMetadata;
+  summary: string;
   visibility: VisibilityConfig;
   navigation: NavigationConfig;
   hero: HeroConfig;

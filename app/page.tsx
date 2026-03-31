@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { AboutMe } from "@/components/AboutMe";
 import { TechStack } from "@/components/TechStack";
 import { Projects } from "@/components/Projects";
 import { getSiteConfig, getProjects, getTechStackData, getResumeData } from "@/lib/content";
@@ -16,6 +17,7 @@ export default async function Home() {
         resumeData={resumeData} 
         resumeLabel="Download Resume" 
       />
+      <AboutMe summary={siteConfig.summary} />
       {siteConfig.visibility?.techStack !== false && (
         <div id="tech-stack">
           <TechStack data={techStackData} />
