@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = https://github.com/0xfzz/0xfzz-portofolio-content.git
