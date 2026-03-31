@@ -3,24 +3,32 @@ import { ExternalLink, Code2 } from "lucide-react";
 
 interface ProjectSidebarProps {
   liveUrl?: string;
-  githubUrl?: string;
+  sourceUrl?: string;
 }
 
-export function ProjectSidebar({ liveUrl, githubUrl }: ProjectSidebarProps) {
+export function ProjectSidebar({ liveUrl, sourceUrl }: ProjectSidebarProps) {
   return (
     <div className="space-y-6">
       <h4 className="text-sm font-bold text-[#323235] uppercase tracking-wider opacity-80">
         Core Actions
       </h4>
       <div className="flex flex-col gap-3">
-        <Button className="w-full bg-[#777E65] hover:bg-[#777E65]/90 text-white gap-2 h-12 font-bold rounded-lg border-none justify-between px-4">
-          <span>Live Demo</span>
-          <ExternalLink className="w-4 h-4 opacity-70" />
-        </Button>
-        <Button variant="outline" className="w-full bg-white hover:bg-[#F9F9F9] text-[#323235] border border-[#E5E7EB] gap-2 h-12 font-bold rounded-lg justify-between px-4">
-          <span>Source Code</span>
-          <Code2 className="w-4 h-4 opacity-70" />
-        </Button>
+        {liveUrl && (
+          <Button asChild className="w-full bg-[#777E65] hover:bg-[#777E65]/90 text-white gap-2 h-12 font-bold rounded-lg border-none justify-between px-4">
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+              <span>Live Demo</span>
+              <ExternalLink className="w-4 h-4 opacity-70" />
+            </a>
+          </Button>
+        )}
+        {sourceUrl && (
+          <Button asChild variant="outline" className="w-full bg-white hover:bg-[#F9F9F9] text-[#323235] border border-[#E5E7EB] gap-2 h-12 font-bold rounded-lg justify-between px-4">
+            <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+              <span>Source Code</span>
+              <Code2 className="w-4 h-4 opacity-70" />
+            </a>
+          </Button>
+        )}
       </div>
     </div>
   );

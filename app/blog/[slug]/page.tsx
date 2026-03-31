@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${article.title} | ${siteConfig.metadata.name}`,
-    description: article.excerpt,
+    description: article.description,
     openGraph: {
       title: article.title,
-      description: article.excerpt,
+      description: article.description,
       type: 'article',
       publishedTime: article.date,
       authors: [siteConfig.metadata.name],
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     twitter: {
       card: 'summary_large_image',
       title: article.title,
-      description: article.excerpt,
+      description: article.description,
       images: article.image ? [article.image] : undefined,
     },
   };

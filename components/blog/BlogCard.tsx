@@ -5,11 +5,11 @@ interface BlogCardProps {
   date: string;
   tags: string[];
   title: string;
-  excerpt: string;
+  description: string;
   slug: string;
 }
 
-export function BlogCard({ date, tags, title, excerpt, slug }: BlogCardProps) {
+export function BlogCard({ date, tags, title, description, slug }: BlogCardProps) {
   return (
     <Link href={`/blog/${slug}`} className="block group">
       <div className="bg-[#E5E7EB]/10 border border-border/40 rounded-xl p-6 transition-all duration-300 group-hover:bg-[#E5E7EB]/20 hover:border-border-hover">
@@ -38,9 +38,9 @@ export function BlogCard({ date, tags, title, excerpt, slug }: BlogCardProps) {
               {title}
             </h2>
             
-            {/* Excerpt */}
+            {/* Description */}
             <p className="text-[#323235]/70 text-base leading-relaxed line-clamp-2">
-              {excerpt}
+              {description}
             </p>
           </div>
         </div>

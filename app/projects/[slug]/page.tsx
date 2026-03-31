@@ -64,7 +64,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           {/* Left Column: Actions */}
           <aside className="lg:col-span-3">
             <ProjectSidebar 
-              githubUrl={project.githubUrl}
+              sourceUrl={project.sourceUrl}
               liveUrl={project.liveUrl}
             />
           </aside>

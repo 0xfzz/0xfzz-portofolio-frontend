@@ -132,7 +132,7 @@ export interface Article {
   tags: string[];
   slug: string;
   image?: string;
-  excerpt: string;
+  description: string;
   body: string;
   published?: boolean;
 }
@@ -144,7 +144,7 @@ export interface Project {
   slug: string;
   technologies: string[];
   liveUrl?: string;
-  githubUrl?: string;
+  sourceUrl?: string;
   body: string;
   published?: boolean;
 }
