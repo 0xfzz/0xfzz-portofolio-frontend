@@ -1,36 +1,42 @@
 import { Skeleton } from "@/components/ui/skeleton";
+import { PageContainer } from "@/components/layout/PageContainer";
 
 export default function BlogDetailLoading() {
   return (
-    <div className="min-h-screen bg-[#FCF8F9]">
-      <div className="pt-40 pb-24 container mx-auto px-4 max-w-4xl">
-        {/* Header Skeleton */}
-        <div className="space-y-6 mb-12">
-          <div className="flex gap-2">
-            <Skeleton className="h-5 w-20" />
-            <Skeleton className="h-5 w-24" />
+    <PageContainer maxWidth="max-w-none">
+      {/* Header Skeleton - Matches BlogDetailHeader.tsx */}
+      <div className="space-y-12 mb-16">
+        <div className="max-w-4xl mx-auto space-y-8 px-4 w-full text-left">
+          <Skeleton className="h-6 w-32" /> {/* Back button */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <Skeleton className="h-6 w-24 rounded-sm" />
+              <Skeleton className="h-4 w-20" />
+            </div>
+            <Skeleton className="h-12 md:h-16 w-full" />
+            <Skeleton className="h-10 md:h-12 w-3/4" />
           </div>
-          <Skeleton className="h-16 md:h-24 w-full" />
-          <Skeleton className="h-6 w-1/3" />
         </div>
 
-        {/* Hero Image Skeleton */}
-        <Skeleton className="h-[400px] w-full rounded-2xl mb-16" />
-
-        {/* Content Skeleton */}
-        <div className="space-y-6">
-           <div className="flex gap-4">
-              <Skeleton className="h-20 w-20 shrink-0" /> {/* Drop cap placeholder */}
-              <div className="space-y-3 w-full">
-                 <Skeleton className="h-4 w-full" />
-                 <Skeleton className="h-4 w-full" />
-              </div>
-           </div>
-           {[...Array(10)].map((_, i) => (
-              <Skeleton key={i} className={`h-4 ${i % 3 === 0 ? 'w-full' : i % 3 === 1 ? 'w-[95%]' : 'w-[90%]'}`} />
-           ))}
+        {/* Hero Image Skeleton matching BlogDetailHeader.tsx aspect-[21/9] */}
+        <div className="max-w-4xl mx-auto px-4 w-full">
+          <Skeleton className="aspect-[21/9] w-full rounded-2xl" />
         </div>
       </div>
-    </div>
+
+      {/* Content Skeleton */}
+      <div className="max-w-4xl mx-auto px-4 space-y-6">
+         <div className="flex gap-4">
+            <Skeleton className="h-20 w-20 shrink-0" /> {/* Drop cap placeholder */}
+            <div className="space-y-3 w-full">
+               <Skeleton className="h-4 w-full" />
+               <Skeleton className="h-4 w-full" />
+            </div>
+         </div>
+         {[...Array(10)].map((_, i) => (
+            <Skeleton key={i} className={`h-4 ${i % 3 === 0 ? 'w-full' : i % 3 === 1 ? 'w-[95%]' : 'w-[90%]'}`} />
+         ))}
+      </div>
+    </PageContainer>
   );
 }

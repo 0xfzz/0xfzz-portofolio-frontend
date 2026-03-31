@@ -2,43 +2,35 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-[#FCF8F9]">
-      {/* Navbar Skeleton */}
-      <div className="fixed top-0 left-0 right-0 z-50 px-6 py-8">
-        <div className="container mx-auto max-w-7xl flex justify-between items-center">
-          <Skeleton className="h-8 w-24" />
-          <div className="hidden md:flex gap-8">
-            <Skeleton className="h-4 w-16" />
-            <Skeleton className="h-4 w-16" />
-            <Skeleton className="h-4 w-16" />
-            <Skeleton className="h-4 w-16" />
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-40 pb-24 container mx-auto px-4 max-w-7xl">
-        {/* Hero Skeleton */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-40">
-          <div className="space-y-8">
+    <div className="min-h-screen bg-background">
+      <div className="pt-32 pb-16 md:pt-48 md:pb-32 container mx-auto px-4">
+        {/* Hero Skeleton - Matches Hero.tsx layout */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-32">
+          <div className="max-w-2xl w-full text-left space-y-8">
+            <Skeleton className="h-6 w-32 rounded-full" />
             <div className="space-y-4">
-              <Skeleton className="h-16 w-3/4" />
-              <Skeleton className="h-16 w-1/2" />
+              <Skeleton className="h-16 md:h-24 w-full" />
+              <Skeleton className="h-16 md:h-24 w-3/4" />
             </div>
-            <Skeleton className="h-20 w-full" />
-            <div className="flex gap-4">
-              <Skeleton className="h-12 w-40" />
-              <Skeleton className="h-12 w-40" />
+            <div className="space-y-3">
+              <Skeleton className="h-6 w-full" />
+              <Skeleton className="h-6 w-5/6" />
             </div>
+            <Skeleton className="h-12 w-48 rounded-xl" />
           </div>
-          <Skeleton className="h-[500px] w-full rounded-2xl" />
+
+          <div className="relative w-full max-w-lg aspect-[4/5] rounded-[2.5rem] overflow-hidden">
+            <Skeleton className="h-full w-full" />
+          </div>
         </div>
 
         {/* Tech Stack Skeleton */}
-        <div className="mb-40">
+        <div className="mb-32">
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="md:w-1/3 space-y-4">
               <Skeleton className="h-10 w-48" />
-              <Skeleton className="h-16 w-full" />
+              <Skeleton className="h-6 w-full" />
+              <Skeleton className="h-6 w-5/6" />
             </div>
             <div className="md:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
               {[...Array(6)].map((_, i) => (
@@ -49,11 +41,11 @@ export default function Loading() {
         </div>
 
         {/* Featured Projects Skeleton */}
-        <div className="space-y-12 mb-40">
+        <div className="space-y-12">
           <div className="flex justify-between items-end">
             <div className="space-y-4">
               <Skeleton className="h-10 w-64" />
-              <Skeleton className="h-4 w-96" />
+              <Skeleton className="h-6 w-96" />
             </div>
             <Skeleton className="h-6 w-32" />
           </div>
