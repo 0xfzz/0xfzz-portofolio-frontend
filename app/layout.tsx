@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/Footer";
 
 const inter = Inter({
