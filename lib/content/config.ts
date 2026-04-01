@@ -5,6 +5,7 @@ export function validateSiteConfig(config: SiteConfig) {
   if (!config.metadata?.title) throw new Error("Missing 'metadata.title' in site-config.json");
   if (!config.navigation) throw new Error("Missing 'navigation' object in site-config.json");
   if (!config.hero?.title) throw new Error("Missing 'hero.title' in site-config.json");
+  if (!config.hero?.image) throw new Error("Missing 'hero.image' in site-config.json");
 }
 
 export const getSiteConfig = async (): Promise<SiteConfig> => {

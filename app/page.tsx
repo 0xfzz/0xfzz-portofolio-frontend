@@ -16,6 +16,7 @@ export default async function Home() {
         data={siteConfig.hero} 
         resumeData={resumeData} 
         resumeLabel="Download Resume" 
+        name={siteConfig.metadata.name}
       />
       <AboutMe summary={siteConfig.summary} />
       {siteConfig.visibility?.techStack !== false && (

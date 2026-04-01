@@ -25,6 +25,7 @@ export interface NavigationConfig {
 export interface HeroConfig {
   title: string;
   subtitle: string;
+  image: string;
 }
 
 export interface FooterConfig {

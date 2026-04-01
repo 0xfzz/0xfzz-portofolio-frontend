@@ -3,13 +3,21 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Download, ExternalLink } from "lucide-react";
 import { DownloadCVButton } from "./resume/DownloadCVButton";
+import { HeroConfig } from "@/lib/types";
 
-interface HeroData {
-  title: string;
-  subtitle: string;
-}
 
-export function Hero({ data, resumeData, resumeLabel }: { data: HeroData; resumeData: any; resumeLabel: string }) {
+
+export function Hero({ 
+  data, 
+  resumeData, 
+  resumeLabel, 
+  name 
+}: { 
+  data: HeroConfig; 
+  resumeData: any; 
+  resumeLabel: string; 
+  name: string;
+}) {
   return (
     <section className="pt-32 pb-16 md:pt-48 md:pb-32">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
@@ -27,8 +35,8 @@ export function Hero({ data, resumeData, resumeLabel }: { data: HeroData; resume
 
         <div className="relative w-full max-w-lg aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-border-subtle bg-muted text-[#121212]">
           <Image
-            src="https://picsum.photos/seed/faiz/800/1000"
-            alt="Faiz Nurdiana"
+            src={data.image}
+            alt={name}
             fill
             className="object-cover"
             priority
