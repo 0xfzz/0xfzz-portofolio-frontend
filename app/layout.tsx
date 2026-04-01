@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code } from "next/font/google";
+import { Inter, Fira_Code, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -12,6 +12,11 @@ const inter = Inter({
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
 import { getSiteConfig, getResumeData, getContactData } from "@/lib/content";
@@ -46,7 +51,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${firaCode.variable} font-sans antialiased text-foreground bg-background`}>
+      <body className={`${inter.variable} ${firaCode.variable} ${spaceGrotesk.variable} font-sans antialiased text-foreground bg-background`}>
         <Navbar
           title={siteConfig.metadata.title}
           navigation={siteConfig.navigation}
