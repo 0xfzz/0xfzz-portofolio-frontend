@@ -50,7 +50,7 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
           </p>
           {data?.tagline && (
             <p className="text-xs text-muted-foreground">
-              {data.tagline} | Last Commit ID: {process.env.NEXT_PUBLIC_COMMIT_HASH}
+              {data.tagline} <span className="text-xs text-muted-foreground">{process.env.NEXT_PUBLIC_COMMIT_HASH}</span>
             </p>
           )}
         </div>
