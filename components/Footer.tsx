@@ -50,18 +50,18 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
           </p>
           {data?.tagline && (
             <p className="text-xs text-muted-foreground">
-              {data.tagline}
+              {data.tagline} | Last Commit ID: {process.env.NEXT_PUBLIC_COMMIT_HASH}
             </p>
           )}
         </div>
-        
+
         <div className="flex items-center gap-6">
           {displayContacts.map((contact) => {
             const IconComponent = IconMap[contact.icon] || Globe;
             return (
-              <Link 
+              <Link
                 key={contact.platform}
-                href={contact.href} 
+                href={contact.href}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 title={contact.platform}
                 target="_blank"

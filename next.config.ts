@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
+import { execSync } from "child_process";
+
+const lastCommitHash = execSync("git rev-parse --short HEAD").toString().trim();
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_COMMIT_HASH: lastCommitHash,
+  },
   images: {
     remotePatterns: [
       {
