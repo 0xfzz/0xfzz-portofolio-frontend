@@ -49,8 +49,12 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
             {copyrightText}
           </p>
           {data?.tagline && (
-            <p className="text-xs text-muted-foreground">
-              {data.tagline} <span className="text-xs text-muted-foreground">{process.env.NEXT_PUBLIC_COMMIT_HASH}</span>
+            <p className="text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1.5">
+              <span>{data.tagline}</span>
+              <span className="opacity-40">•</span>
+              <span className="font-mono text-[10px] uppercase tracking-tighter opacity-70">
+                {process.env.NEXT_PUBLIC_COMMIT_HASH}
+              </span>
             </p>
           )}
         </div>
