@@ -49,13 +49,21 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
             {copyrightText}
           </p>
           {data?.tagline && (
-            <p className="text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1.5">
+            <div className="text-[10px] text-muted-foreground flex items-center justify-center md:justify-start gap-2 h-4">
               <span>{data.tagline}</span>
               <span className="opacity-40">•</span>
-              <span className="font-mono text-[10px] tracking-tighter opacity-70">
-                {process.env.NEXT_PUBLIC_COMMIT_HASH}
-              </span>
-            </p>
+              <div className="flex items-center gap-1.5 font-mono opacity-60">
+                <span title="Frontend Hash" className="flex items-center gap-0.5">
+                  <span className="text-[8px] opacity-50 uppercase">f:</span>
+                  <span>{process.env.NEXT_PUBLIC_COMMIT_HASH}</span>
+                </span>
+                <span className="opacity-20">/</span>
+                <span title="Content Hash" className="flex items-center gap-0.5">
+                  <span className="text-[8px] opacity-50 uppercase">c:</span>
+                  <span>{process.env.NEXT_PUBLIC_CONTENT_COMMIT_HASH}</span>
+                </span>
+              </div>
+            </div>
           )}
         </div>
 
