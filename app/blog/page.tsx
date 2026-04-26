@@ -2,6 +2,18 @@ import { BlogList } from "@/components/blog/BlogList";
 import { getArticles, getSiteConfig } from "@/lib/content";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
+import type { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const siteConfig = await getSiteConfig();
+  return {
+    title: `Blog | ${siteConfig.metadata.name}`,
+    description: siteConfig.pages?.blog?.subtitle || `Technical articles and insights from ${siteConfig.metadata.name}.`,
+    alternates: {
+      canonical: 'https://www.0xfzz.my.id/blog',
+    },
+  };
+}
 
 export default async function BlogPage() {
   const siteConfig = await getSiteConfig();

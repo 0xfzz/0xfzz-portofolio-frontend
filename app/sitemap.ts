@@ -3,7 +3,7 @@ import { getProjects, getArticles, getSiteConfig } from '@/lib/content';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteConfig = await getSiteConfig();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://0xfzz.me';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.0xfzz.my.id';
 
   // Base routes
   const routes: MetadataRoute.Sitemap = [

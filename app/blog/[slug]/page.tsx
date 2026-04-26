@@ -40,6 +40,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: article.description,
       images: article.image ? [article.image] : undefined,
     },
+    alternates: {
+      canonical: `https://www.0xfzz.my.id/blog/${slug}`,
+    },
   };
 }
 

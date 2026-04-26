@@ -23,7 +23,7 @@ export function ProjectCard({ title, description, image, slug, technologies }: P
             className="object-cover"
           />
           <div className="absolute top-3 right-3 flex gap-2">
-            {technologies.slice(0, 1).map((tech) => (
+            {technologies.filter(tech => tech && tech.trim() !== "").slice(0, 1).map((tech) => (
               <Badge 
                 key={tech}
                 variant="secondary" 
@@ -38,7 +38,7 @@ export function ProjectCard({ title, description, image, slug, technologies }: P
 
       {!image && (
         <div className="mb-6 flex gap-2">
-          {technologies.slice(0, 1).map((tech) => (
+          {technologies.filter(tech => tech && tech.trim() !== "").slice(0, 1).map((tech) => (
             <Badge 
               key={tech}
               variant="secondary" 

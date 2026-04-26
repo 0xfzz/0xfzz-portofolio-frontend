@@ -25,7 +25,7 @@ export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderP
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <div className="flex gap-2">
-              {tags.map((tag) => (
+              {tags.filter(tag => tag && tag.trim() !== "").map((tag) => (
                 <Badge 
                   key={tag}
                   variant="secondary" 

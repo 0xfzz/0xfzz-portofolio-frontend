@@ -71,10 +71,10 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-bold tracking-tight text-foreground font-mono"
+            className="text-lg md:text-xl font-bold tracking-tight text-foreground font-mono"
             style={{ fontFamily: 'var(--font-fira-code), monospace' }}
           >
-            0xfzz
+            {process.env.NEXT_PUBLIC_NAVBAR_TITLE || "0xfzz"}
           </Link>
 
           {/* Desktop Links */}

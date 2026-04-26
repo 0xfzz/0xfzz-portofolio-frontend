@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_COMMIT_HASH: frontendCommitHash,
     NEXT_PUBLIC_CONTENT_COMMIT_HASH: contentCommitHash,
+    NEXT_PUBLIC_NAVBAR_TITLE: "0xfzz | Faiz Nurdiana",
   },
   images: {
     remotePatterns: [

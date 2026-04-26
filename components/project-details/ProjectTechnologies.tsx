@@ -11,7 +11,7 @@ export function ProjectTechnologies({ technologies }: ProjectTechnologiesProps) 
         Technologies Leveraged
       </span>
       <div className="flex flex-wrap gap-3">
-        {technologies.map((tech) => (
+        {technologies.filter(tech => tech && tech.trim() !== "").map((tech) => (
           <Badge 
             key={tech}
             variant="secondary" 

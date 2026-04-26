@@ -32,13 +32,39 @@ export async function generateMetadata(): Promise<Metadata> {
     throw new Error("Site configuration error: 'metadata.description' is required in site-config.json");
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.0xfzz.my.id';
+
   return {
     title: siteConfig.metadata.title,
     description: siteConfig.metadata.description,
+    alternates: {
+      canonical: baseUrl,
+    },
+    openGraph: {
+      title: siteConfig.metadata.title,
+      description: siteConfig.metadata.description,
+      url: baseUrl,
+      siteName: siteConfig.metadata.title,
+      locale: 'en_US',
+      type: 'website',
+    },
+    icons: {
+      icon: [
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon.ico' },
+      ],
+      apple: [
+        { url: '/apple-touch-icon.png' },
+      ],
+    },
+    manifest: '/site.webmanifest',
   };
 }
 
 import MermaidLoader from "@/components/MermaidLoader";
+import { JsonLd } from "@/components/JsonLd";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default async function RootLayout({
   children,
@@ -65,6 +91,8 @@ export default async function RootLayout({
           visibility={siteConfig.visibility}
         />
         <MermaidLoader />
+        <JsonLd />
+        <GoogleAnalytics gaId="G-N92LKQB8QN" />
       </body>
     </html>
   );

@@ -13,6 +13,18 @@ import {
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/layout/PageHeader";
+import type { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const siteConfig = await getSiteConfig();
+  return {
+    title: `Experiences | ${siteConfig.metadata.name}`,
+    description: siteConfig.pages?.experiences?.subtitle || `Explore the professional journey of ${siteConfig.metadata.name}.`,
+    alternates: {
+      canonical: 'https://www.0xfzz.my.id/experiences',
+    },
+  };
+}
 
 export default async function ExperiencesPage() {
   const siteConfig = await getSiteConfig();

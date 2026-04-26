@@ -22,7 +22,7 @@ export function ProjectHeader({ title, technologies, description, image }: Proje
           Back to Projects
         </Link>
         <div className="flex gap-2 flex-wrap">
-          {technologies.map((tech) => (
+          {technologies.filter(tech => tech && tech.trim() !== "").map((tech) => (
             <Badge key={tech} variant="secondary" className="bg-[#B2BDC8]/40 text-[#323235] border-none px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-sm">
               {tech}
             </Badge>

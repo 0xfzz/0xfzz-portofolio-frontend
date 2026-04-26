@@ -17,7 +17,7 @@ export function ProjectContent({ technologies, content }: ProjectContentProps) {
           Technologies Leveraged
         </h4>
         <div className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
+          {technologies.filter(tech => tech && tech.trim() !== "").map((tech) => (
             <span 
               key={tech}
               className="px-3 py-1 bg-muted-foreground/15 text-muted-foreground text-[12px] font-bold rounded-md uppercase tracking-wide"

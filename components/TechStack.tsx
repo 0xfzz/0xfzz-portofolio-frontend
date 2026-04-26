@@ -80,7 +80,7 @@ export function TechStack({ data }: TechStackProps) {
           </div>
           
           <div className="flex flex-wrap gap-3 lg:justify-end">
-            {data.skills.hard.map((tech) => (
+            {data.skills.hard.filter(tech => tech && tech.trim() !== "").map((tech) => (
               <Badge 
                 key={tech} 
                 variant="secondary" 

@@ -22,7 +22,7 @@ export function ExperienceItem({ role, company, period, description, tags }: Exp
       </div>
       
       <ul className="space-y-4 mb-8">
-        {description.map((point, i) => (
+        {description.filter(point => point && point.trim() !== "").map((point, i) => (
           <li key={i} className="flex items-start gap-3 text-muted-foreground leading-relaxed text-[0.95rem]">
             <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#B2BDC8] shrink-0" />
             {point}
@@ -31,7 +31,7 @@ export function ExperienceItem({ role, company, period, description, tags }: Exp
       </ul>
 
       <div className="flex flex-wrap gap-2">
-        {tags.map((tag) => (
+        {tags.filter(tag => tag && tag.trim() !== "").map((tag) => (
           <Badge 
             key={tag} 
             variant="secondary" 

@@ -1,0 +1,17 @@
+# Faiz Nurdiana
+Student | Backend Developer & Cybersecurity Enthusiast
+
+## About
+Faiz Nurdiana is a student specializing in backend development with a strong interest in cybersecurity. This portfolio showcases projects in software engineering and security research.
+
+## Website
+https://www.0xfzz.my.id
+
+## Core Interests
+- Backend Development (Node.js, Go, Python)
+- Cybersecurity (Penetration Testing, Research)
+- Software Architecture
+
+## Contact & Socials
+- GitHub: https://github.com/0xfzz
+- LinkedIn: https://linkedin.com/in/faiz-nurdiana

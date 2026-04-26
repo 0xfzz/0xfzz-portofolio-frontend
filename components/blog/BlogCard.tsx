@@ -20,7 +20,7 @@ export function BlogCard({ date, tags, title, description, slug }: BlogCardProps
               {date}
             </span>
             <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-              {tags.map((tag) => (
+              {tags.filter(tag => tag && tag.trim() !== "").map((tag) => (
                 <Badge 
                   key={tag}
                   variant="secondary" 

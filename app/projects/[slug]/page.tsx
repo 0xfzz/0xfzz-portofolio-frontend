@@ -38,6 +38,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: project.description,
       images: project.image ? [project.image] : undefined,
     },
+    alternates: {
+      canonical: `https://www.0xfzz.my.id/projects/${slug}`,
+    },
   };
 }
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -22,19 +21,19 @@ export function MobileMenu({ isOpen, onClose, navigation, resumeData }: MobileMe
                 <>
                     <div
                         onClick={onClose}
-                        className="fixed inset-0 z-40 backdrop-blur-md h-dvh"
+                        className="fixed inset-0 z-40 backdrop-blur-md bg-black/5"
                     />
 
                     <div
-                        className="fixed right-0 top-0 bottom-0 z-50 w-[280px] bg-background border-l border-border shadow-2xl p-6 pt-24 flex flex-col h-dvh"
+                        className="fixed right-0 top-0 bottom-0 z-50 w-[280px] bg-background border-l border-border shadow-2xl p-6 pt-24 flex flex-col"
                     >
                         <nav className="flex flex-col gap-6">
                             <Link
                                 href="/"
-                                className="text-xl font-bold tracking-tight text-foreground font-mono"
+                                className="text-lg font-bold tracking-tight text-foreground font-mono"
                                 style={{ fontFamily: 'var(--font-fira-code), monospace' }}
                             >
-                                0xfzz
+                                {process.env.NEXT_PUBLIC_NAVBAR_TITLE || "0xfzz"}
                             </Link>
                             {navigation.map((link) => {
                                 const isActive = link.href === "/"

@@ -13,7 +13,7 @@ export function BlogHeader({ title, subtitle, tags, activeTag, onTagClick }: Blo
   return (
     <PageHeader title={title} subtitle={subtitle}>
       <div className="flex flex-wrap gap-4">
-        {tags.map((tag) => (
+        {tags.filter(tag => tag && tag.trim() !== "").map((tag) => (
           <Badge 
             key={tag}
             variant="secondary" 
