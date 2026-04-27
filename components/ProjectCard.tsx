@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MoveRight, Code2 } from "lucide-react";
+import { CodeIcon as Code } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "./ui/badge";
 
 interface ProjectCardProps {
@@ -65,7 +65,7 @@ export function ProjectCard({ title, description, image, slug, technologies }: P
             href={`/projects/${slug}`}
             className="inline-flex items-center gap-2 text-sm font-bold text-[#323235] uppercase tracking-wider hover:gap-3 transition-all"
           >
-            <Code2 className="w-4 h-4 opacity-70" />
+            <Code className="w-4 h-4 opacity-70" weight="duotone" />
             View Details
           </Link>
         </div>

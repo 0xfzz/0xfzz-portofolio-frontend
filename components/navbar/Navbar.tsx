@@ -110,8 +110,6 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
                 data={resumeData}
                 label={resumeData.label}
                 size="sm"
-                variant="secondary"
-                showIcon={false}
               />
             </div>
             <MenuToggle isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />

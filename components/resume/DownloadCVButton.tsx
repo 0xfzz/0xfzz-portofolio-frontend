@@ -3,7 +3,7 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { ResumePDF } from "@/lib/cv/ResumePDF";
 import { Button } from "../ui/button";
-import { Download } from "lucide-react";
+import { DownloadSimpleIcon as Download } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 

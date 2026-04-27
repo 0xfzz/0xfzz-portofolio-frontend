@@ -2,22 +2,26 @@ import Link from "next/link";
 import { ProjectCard } from "./ProjectCard";
 import { Button } from "./ui/button";
 import { Project } from "@/lib/content";
+import { SquaresFourIcon } from "@phosphor-icons/react/dist/ssr";
 
-export function Projects({ 
-  projects, 
-  title = "Featured Projects", 
-  subtitle = "A selection of my recent work in backend engineering, cloud architecture, and web development." 
-}: { 
-  projects: Project[], 
-  title?: string, 
-  subtitle?: string 
+export function Projects({
+  projects,
+  title = "Featured Projects",
+  subtitle = "A selection of my recent work in backend engineering, cloud architecture, and web development."
+}: {
+  projects: Project[],
+  title?: string,
+  subtitle?: string
 }) {
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">{title}</h2>
+            <div className="flex items-center gap-4 mb-4">
+              <SquaresFourIcon size={40} weight="duotone" className="text-primary" />
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">{title}</h2>
+            </div>
             <p className="text-muted-foreground text-lg">
               {subtitle}
             </p>

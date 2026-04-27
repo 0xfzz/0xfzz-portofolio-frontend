@@ -1,25 +1,24 @@
 import { ContactCard } from "@/components/contact/ContactCard";
 import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Twitter, 
-  Instagram, 
-  Facebook, 
-  Youtube, 
-  Twitch, 
-  Dribbble, 
-  Figma, 
-  Globe, 
-  MessageSquare, 
-  Send,
-  LucideIcon 
-} from "lucide-react";
+  GithubLogo as Github, 
+  LinkedinLogo as Linkedin, 
+  Envelope as Mail, 
+  TwitterLogo as Twitter, 
+  InstagramLogo as Instagram, 
+  FacebookLogo as Facebook, 
+  YoutubeLogo as Youtube, 
+  TwitchLogo as Twitch, 
+  DribbbleLogo as Dribbble, 
+  FigmaLogo as Figma, 
+  GlobeIcon as Globe, 
+  DiscordLogo as Discord, 
+  PaperPlaneTilt as Send
+} from "@phosphor-icons/react/dist/ssr";
 import { getContactData, getSiteConfig } from "@/lib/content";
 import { notFound } from "next/navigation";
 import { PageContainer } from "@/components/layout/PageContainer";
 
-const ICON_MAP: Record<string, LucideIcon> = {
+const ICON_MAP: Record<string, React.ElementType> = {
   Github,
   Linkedin,
   Mail,
@@ -31,7 +30,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Dribbble,
   Figma,
   Globe,
-  Discord: MessageSquare,
+  Discord,
   Telegram: Send,
 };
 

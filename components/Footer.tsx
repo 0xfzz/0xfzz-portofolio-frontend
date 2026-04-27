@@ -1,4 +1,11 @@
-import { Github, Linkedin, Mail, Twitter, Globe, Dribbble } from "lucide-react";
+import { 
+  GithubLogo as Github, 
+  LinkedinLogo as Linkedin, 
+  Envelope as Mail, 
+  TwitterLogo as Twitter, 
+  GlobeIcon as Globe, 
+  DribbbleLogo as Dribbble 
+} from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 interface FooterData {
@@ -79,7 +86,7 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IconComponent className="w-5 h-5" />
+                <IconComponent className="w-5 h-5" weight="duotone" />
               </Link>
             );
           })}

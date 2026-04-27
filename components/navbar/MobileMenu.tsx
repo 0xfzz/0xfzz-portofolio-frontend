@@ -63,8 +63,6 @@ export function MobileMenu({ isOpen, onClose, navigation, resumeData }: MobileMe
                                 data={resumeData}
                                 label={resumeData.label || "Download CV"}
                                 className="w-full"
-                                variant="secondary"
-                                showIcon={true}
                             />
                         </div>
                     </div>

@@ -8,16 +8,19 @@ import { getBaseUrl } from "@/lib/utils";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: 'swap',
 });
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
+  display: 'swap',
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+  display: 'swap',
 });
 
 import { getSiteConfig, getResumeData, getContactData } from "@/lib/content";
@@ -66,6 +69,7 @@ export async function generateMetadata(): Promise<Metadata> {
 import MermaidLoader from "@/components/MermaidLoader";
 import { JsonLd } from "@/components/JsonLd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { IconProvider } from "@/components/IconProvider";
 
 export default async function RootLayout({
   children,
@@ -79,21 +83,23 @@ export default async function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${firaCode.variable} ${spaceGrotesk.variable} font-sans antialiased text-foreground bg-background`}>
-        <Navbar
-          title={siteConfig.metadata.title}
-          navigation={siteConfig.navigation}
-          visibility={siteConfig.visibility}
-          resumeData={resumeData}
-        />
-        {children}
-        <Footer
-          data={siteConfig.footer}
-          contacts={contactData.methods}
-          visibility={siteConfig.visibility}
-        />
-        <MermaidLoader />
-        <JsonLd />
-        <GoogleAnalytics gaId="G-N92LKQB8QN" />
+        <IconProvider>
+          <Navbar
+            title={siteConfig.metadata.title}
+            navigation={siteConfig.navigation}
+            visibility={siteConfig.visibility}
+            resumeData={resumeData}
+          />
+          {children}
+          <Footer
+            data={siteConfig.footer}
+            contacts={contactData.methods}
+            visibility={siteConfig.visibility}
+          />
+          <MermaidLoader />
+          <JsonLd />
+          <GoogleAnalytics gaId="G-N92LKQB8QN" />
+        </IconProvider>
       </body>
     </html>
   );

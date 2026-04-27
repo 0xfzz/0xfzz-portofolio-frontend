@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeftIcon as ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "@/components/ui/badge";
 
 interface ProjectHeaderProps {
@@ -18,7 +18,7 @@ export function ProjectHeader({ title, technologies, description, image }: Proje
           href="/projects"
           className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-[#1a1a1a] transition-colors mb-4"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <ArrowLeft className="mr-2 h-4 w-4" weight="duotone" />
           Back to Projects
         </Link>
         <div className="flex gap-2 flex-wrap">

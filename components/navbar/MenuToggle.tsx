@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { ListIcon as Menu, XIcon as X } from "@phosphor-icons/react";
 import { Button } from "../ui/button";
 interface MenuToggleProps {
     isOpen: boolean;

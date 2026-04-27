@@ -1,4 +1,4 @@
-"use client";
+
 
 export function JsonLd() {
   const personSchema = {

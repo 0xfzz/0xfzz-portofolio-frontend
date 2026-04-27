@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft } from "lucide-react";
+import { CaretLeftIcon as CaretLeft } from "@phosphor-icons/react/dist/ssr";
 
 interface BlogDetailHeaderProps {
   tags: string[];
@@ -18,7 +18,7 @@ export function BlogDetailHeader({ tags, date, title, image }: BlogDetailHeaderP
           href="/blog" 
           className="inline-flex items-center gap-2 text-sm font-bold text-[#323235]/60 hover:text-[#323235] transition-colors group"
         >
-          <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          <CaretLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" weight="duotone" />
           Back to Blog
         </Link>
 
