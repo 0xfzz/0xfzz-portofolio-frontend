@@ -3,6 +3,7 @@ import { Inter, Fira_Code, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/Footer";
+import { getBaseUrl } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     throw new Error("Site configuration error: 'metadata.description' is required in site-config.json");
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.0xfzz.my.id';
+  const baseUrl = getBaseUrl();
 
   return {
     title: siteConfig.metadata.title,

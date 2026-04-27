@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
+import { getBaseUrl } from '@/lib/utils';
 import { getProjects, getArticles, getSiteConfig } from '@/lib/content';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteConfig = await getSiteConfig();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.0xfzz.my.id';
+  const baseUrl = getBaseUrl();
 
   // Base routes
   const routes: MetadataRoute.Sitemap = [
