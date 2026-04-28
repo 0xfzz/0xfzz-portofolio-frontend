@@ -39,7 +39,7 @@ export function MarkdownRenderer({
           </h4>
         ),
         p: ({ children }) => (
-          <p className="text-base text-[#444] leading-relaxed mb-4 last:mb-0">
+          <p className="text-base text-[#444] leading-relaxed mb-4 last:mb-0 text-justify [hyphens:auto] [word-break:break-word]">
             {children}
           </p>
         ),

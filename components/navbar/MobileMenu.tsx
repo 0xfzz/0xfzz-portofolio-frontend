@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { DownloadCVButton } from "../resume/DownloadCVButton";
 
+import { Logo } from "./Logo";
+
 interface MobileMenuProps {
     isOpen: boolean;
     onClose: () => void;
@@ -28,13 +30,10 @@ export function MobileMenu({ isOpen, onClose, navigation, resumeData }: MobileMe
                         className="fixed right-0 top-0 bottom-0 z-50 w-[280px] bg-background border-l border-border shadow-2xl p-6 pt-24 flex flex-col"
                     >
                         <nav className="flex flex-col gap-6">
-                            <Link
-                                href="/"
-                                className="text-lg font-bold tracking-tight text-foreground font-mono"
-                                style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-                            >
-                                {process.env.NEXT_PUBLIC_NAVBAR_TITLE || "0xfzz"}
-                            </Link>
+                            <Logo 
+                                className="text-xl mb-4" 
+                                onClick={onClose} 
+                            />
                             {navigation.map((link) => {
                                 const isActive = link.href === "/"
                                     ? pathname === "/"

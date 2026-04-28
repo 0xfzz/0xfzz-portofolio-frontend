@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { MenuToggle } from "./MenuToggle";
 import { MobileMenu } from "./MobileMenu";
+import { Logo } from "./Logo";
 
 interface NavbarProps {
   title: string;
@@ -69,13 +70,7 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
     <div>
       <nav className={`fixed top-0 left-0 right-0 bg-background/70 backdrop-blur-md border-b border-border/40 ${isOpen ? "" : "z-50"}`}>
         <div className="container mx-auto px-6 md:px-12 lg:px-16 h-16 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-lg md:text-xl font-bold tracking-tight text-foreground font-mono"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            {process.env.NEXT_PUBLIC_NAVBAR_TITLE || "0xfzz"}
-          </Link>
+          <Logo className="text-lg md:text-2xl" />
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">

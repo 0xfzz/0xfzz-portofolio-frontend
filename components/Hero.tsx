@@ -4,6 +4,7 @@ import { Badge } from "./ui/badge";
 
 import { DownloadCVButton } from "./resume/DownloadCVButton";
 import { HeroConfig } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 
 
@@ -39,7 +40,12 @@ export function Hero({
                     />
                   </div>
                 )}
-                <h1 className={`text-5xl md:text-8xl ${index === 1 ? "font-normal" : "font-extrabold"} tracking-tight leading-[1.1] text-foreground`}>
+                <h1 
+                  className={cn(
+                    "text-5xl md:text-8xl tracking-tight leading-[1.1] text-foreground",
+                    index === 1 ? "font-normal" : "font-extrabold"
+                  )}
+                >
                   {word}
                 </h1>
               </div>
