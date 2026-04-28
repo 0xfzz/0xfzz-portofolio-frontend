@@ -68,7 +68,7 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
   return (
     <div>
       <nav className={`fixed top-0 left-0 right-0 bg-background/70 backdrop-blur-md border-b border-border/40 ${isOpen ? "" : "z-50"}`}>
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-6 md:px-12 lg:px-16 h-16 flex items-center justify-between">
           <Link
             href="/"
             className="text-lg md:text-xl font-bold tracking-tight text-foreground font-mono"
@@ -78,7 +78,7 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {activeLinks.map((link) => {
               const isActive = link.href === "/"
                 ? pathname === "/"
@@ -112,7 +112,9 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
                 size="sm"
               />
             </div>
-            <MenuToggle isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+            <div className="md:hidden">
+              <MenuToggle isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+            </div>
           </div>
         </div>
       </nav>

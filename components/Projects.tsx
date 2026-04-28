@@ -14,8 +14,8 @@ export function Projects({
   subtitle?: string
 }) {
   return (
-    <section id="projects" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-16 md:py-24">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
             <div className="flex items-center gap-4 mb-4">

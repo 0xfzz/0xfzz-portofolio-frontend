@@ -7,8 +7,8 @@ interface AboutMeProps {
 
 export function AboutMe({ summary }: AboutMeProps) {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="text-left w-full">
           <div className="flex items-center gap-4 mb-8">
             <IdentificationBadgeIcon size={40} weight="duotone" className="text-primary" />

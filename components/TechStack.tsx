@@ -66,10 +66,10 @@ interface TechStackProps {
 
 export function TechStack({ data }: TechStackProps) {
   return (
-    <section id="tech-stack" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="tech-stack" className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16">
         {/* Top Section: Heading + Subheading (Left) and Tech Chips (Right) */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-20">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-12 md:mb-20">
           <div className="max-w-xl text-left">
             <div className="flex items-center gap-4 mb-4">
               <Binary size={40} weight="duotone" className="text-primary" />

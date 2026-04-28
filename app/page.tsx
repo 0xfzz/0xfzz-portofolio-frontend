@@ -12,11 +12,12 @@ export default async function Home() {
 
   return (
     <main className="relative flex flex-col text-foreground">
-      <Hero 
-        data={siteConfig.hero} 
-        resumeData={resumeData} 
-        resumeLabel="Download Resume" 
+      <Hero
+        data={siteConfig.hero}
+        resumeData={resumeData}
+        resumeLabel="Download Resume"
         name={siteConfig.metadata.name}
+        images={siteConfig.images}
       />
       <AboutMe summary={siteConfig.summary} />
       {siteConfig.visibility?.techStack !== false && (
@@ -26,8 +27,8 @@ export default async function Home() {
       )}
       {siteConfig.visibility?.projects !== false && (
         <div id="projects">
-          <Projects 
-            projects={projects} 
+          <Projects
+            projects={projects}
             title={siteConfig.pages?.home?.projects?.title}
             subtitle={siteConfig.pages?.home?.projects?.subtitle}
           />

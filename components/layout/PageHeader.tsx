@@ -15,7 +15,7 @@ export function PageHeader({
   className 
 }: PageHeaderProps) {
   return (
-    <div className={cn("space-y-4 mb-20", className)}>
+    <div className={cn("space-y-4 mb-12 md:mb-20", className)}>
       <div className="space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#323235] leading-[1.1]">
           {title}

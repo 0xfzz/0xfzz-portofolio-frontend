@@ -14,7 +14,7 @@ export function PageContainer({
 }: PageContainerProps) {
   return (
     <div className={cn(
-      "pt-32 pb-24 md:pt-48 md:pb-32 container mx-auto px-4",
+      "pt-24 pb-16 md:pt-40 md:pb-32 container mx-auto px-6 md:px-12 lg:px-16 min-h-[70vh]",
       maxWidth,
       className
     )}>

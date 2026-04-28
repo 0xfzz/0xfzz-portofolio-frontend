@@ -25,7 +25,6 @@ export interface NavigationConfig {
 export interface HeroConfig {
   title: string;
   subtitle: string;
-  image: string;
 }
 
 export interface FooterConfig {
@@ -41,6 +40,7 @@ export interface SiteConfig {
   navigation: NavigationConfig;
   hero: HeroConfig;
   footer: FooterConfig;
+  images: Record<string, string>;
   pages: {
     home?: {
       projects?: {

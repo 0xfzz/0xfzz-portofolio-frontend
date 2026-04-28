@@ -41,6 +41,11 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-space-grotesk;
   }
+  p {
+    @apply text-justify;
+    hyphens: auto;
+    word-break: break-word;
+  }
 }
 
 /* --- Content Styling (Backend Parity) --- */
@@ -91,4 +96,18 @@
 /* Spacing utility for lists */
 .content-list {
   @apply flex flex-col gap-4 my-8;
+}
+
+/* --- Animations --- */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
