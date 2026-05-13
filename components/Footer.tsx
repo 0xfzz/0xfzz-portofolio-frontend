@@ -50,7 +50,7 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
 
   return (
     <footer className="py-12 border-t border-border/40">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         <div className="space-y-1">
           <p className="text-sm font-bold text-[#323235]">
             {copyrightText}
