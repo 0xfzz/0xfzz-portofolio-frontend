@@ -6,7 +6,7 @@ interface BlogDetailContentProps {
 
 export function BlogDetailContent({ content }: BlogDetailContentProps) {
   return (
-    <div className="w-full max-w-4xl mx-auto px-4">
+    <div className="w-full">
       <MarkdownRenderer content={content} />
     </div>
   );

@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
+import { Button } from "@/components/ui/button";
 
-import { DownloadCVButton } from "./resume/DownloadCVButton";
+import { DownloadCVButton } from "@/components/resume/DownloadCVButton";
 import { HeroConfig } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -22,8 +21,8 @@ export function Hero({
   images: Record<string, string>;
 }) {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-20 pb-12 md:pt-0 md:pb-0">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-12 py-12 md:py-20">
+    <section className="pt-20 pb-8 md:pt-24 md:pb-4">
+      <div className="container mx-auto max-w-5xl px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-8 py-4 md:py-8">
         <div className="max-w-2xl text-left">
           <div className="flex flex-wrap items-end gap-x-5 ">
             {data.title.split(" ").map((word, index) => (
@@ -51,7 +50,7 @@ export function Hero({
               </div>
             ))}
           </div>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-xl leading-relaxed">
             {data.subtitle}
           </p>
           <div className="flex flex-wrap gap-4">
@@ -59,7 +58,7 @@ export function Hero({
           </div>
         </div>
 
-        {/* <div className="relative w-full max-w-lg aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-border-subtle bg-muted text-[#121212]">
+        {/* <div className="relative w-full max-w-lg aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-border-subtle bg-muted text-ink-strong">
           <Image
             src={data.image}
             alt={name}

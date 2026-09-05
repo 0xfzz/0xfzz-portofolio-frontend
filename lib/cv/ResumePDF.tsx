@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     color: "#5F5F61",
   },
   link: {
-    color: "#777E65",
+    color: "#0000E6",
     textDecoration: "none",
   },
   section: {

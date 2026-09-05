@@ -1,7 +1,7 @@
 import { ExperienceItem } from "@/components/experiences/ExperienceItem";
 import { EducationSection } from "@/components/experiences/EducationSection";
 import { AwardsSection } from "@/components/experiences/AwardsSection";
-import { CollaboratingCTA } from "@/components/CollaboratingCTA";
+import { CollaboratingCTA } from "@/components/shared/CollaboratingCTA";
 import { 
   getExperiencesData, 
   getOtherExperiencesData,
@@ -41,14 +41,14 @@ export default async function ExperiencesPage() {
 
   return (
     <PageContainer>
-      <div className="space-y-12 mb-32">
+      <div className="space-y-8 mb-16">
         <PageHeader 
           title={siteConfig.pages?.experiences?.title || "Experience"}
           subtitle={siteConfig.pages?.experiences?.subtitle}
         />
 
-        <div className="mb-20">
-          <h4 className="text-sm font-bold tracking-wider text-[#323235] uppercase mb-10">
+        <div className="mb-10">
+          <h4 className="text-sm font-bold text-foreground mb-6">
             {siteConfig.pages?.experiences?.sections?.work || "Work Experience"}
           </h4>
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border/40 before:to-transparent">
@@ -59,8 +59,8 @@ export default async function ExperiencesPage() {
         </div>
 
         {otherExperiences.length > 0 && (
-          <div className="mb-20">
-            <h4 className="text-sm font-bold tracking-wider text-[#323235] uppercase mb-10">
+          <div className="mb-10">
+            <h4 className="text-sm font-bold text-foreground mb-6">
               {siteConfig.pages?.experiences?.sections?.other || "Other Experience"}
             </h4>
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border/40 before:to-transparent">

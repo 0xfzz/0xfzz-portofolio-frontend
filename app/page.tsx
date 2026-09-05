@@ -1,7 +1,7 @@
-import { Hero } from "@/components/Hero";
-import { AboutMe } from "@/components/AboutMe";
-import { TechStack } from "@/components/TechStack";
-import { Projects } from "@/components/Projects";
+import { Hero } from "@/components/home/Hero";
+import { AboutMe } from "@/components/home/AboutMe";
+import { TechStack } from "@/components/home/TechStack";
+import { Projects } from "@/components/home/Projects";
 import { getSiteConfig, getProjects, getTechStackData, getResumeData } from "@/lib/content";
 
 export default async function Home() {

@@ -8,9 +8,9 @@ export default function ExperiencesLoading() {
       <LoadingHeader />
 
       {/* Work Experience Section Skeleton */}
-      <div className="mb-20">
-        <Skeleton className="h-4 w-32 mb-10" />
-        <div className="space-y-12">
+      <div className="mb-10">
+        <Skeleton className="h-4 w-32 mb-6" />
+        <div className="space-y-8">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="group">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-6 gap-2">
@@ -44,9 +44,9 @@ export default function ExperiencesLoading() {
       </div>
 
       {/* Education Section Skeleton */}
-      <div className="mb-32">
-        <Skeleton className="h-4 w-24 mb-10" />
-        <div className="space-y-12">
+      <div className="mb-16">
+        <Skeleton className="h-4 w-24 mb-6" />
+        <div className="space-y-8">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
               <div className="space-y-2">
@@ -63,9 +63,9 @@ export default function ExperiencesLoading() {
       </div>
 
       {/* Awards Section Skeleton */}
-      <div className="mb-32">
-        <Skeleton className="h-4 w-32 mb-10" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="mb-16">
+        <Skeleton className="h-4 w-32 mb-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="space-y-3 p-6 rounded-xl border border-border-subtle">
               <div className="flex justify-between items-start gap-4">

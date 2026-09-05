@@ -54,7 +54,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <div className="pt-32 md:pt-48">
+    <div className="pt-20 md:pt-28">
       <ProjectHeader 
         title={project.title}
         technologies={project.technologies}
@@ -62,8 +62,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         image={project.image}
       />
       
-      <div className="w-full max-w-6xl mx-auto px-4 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="w-full max-w-5xl mx-auto px-4 md:px-8 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Left Column: Actions */}
           <aside className="lg:col-span-3">
             <ProjectSidebar 

@@ -1,4 +1,4 @@
-import { Badge } from "./ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { 
   SquaresFourIcon as SquaresFour, 
   DatabaseIcon as Database, 
@@ -19,8 +19,7 @@ import {
   LockIcon as Lock, 
   LightningIcon as Lightning, 
   GearIcon as Gear, 
-  PulseIcon as Pulse, 
-  BinaryIcon as Binary,
+  PulseIcon as Pulse,
   InfinityIcon
 } from "@phosphor-icons/react/dist/ssr";
 
@@ -66,17 +65,14 @@ interface TechStackProps {
 
 export function TechStack({ data }: TechStackProps) {
   return (
-    <section id="tech-stack" className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
+    <section id="tech-stack" className="py-10 md:py-14 bg-background">
+      <div className="container mx-auto max-w-5xl px-4 md:px-8">
         {/* Top Section: Heading + Subheading (Left) and Tech Chips (Right) */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-12 md:mb-20">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8 md:mb-10">
           <div className="max-w-xl text-left">
-            <div className="flex items-center gap-4 mb-4">
-              <Binary size={40} weight="duotone" className="text-primary" />
-              <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight leading-tight text-foreground">
-                {data.title}
-              </h2>
-            </div>
+            <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight leading-tight text-foreground mb-4">
+              {data.title}
+            </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               {data.subtitle}
             </p>
@@ -84,10 +80,10 @@ export function TechStack({ data }: TechStackProps) {
           
           <div className="flex flex-wrap gap-3 lg:justify-end">
             {data.skills.hard.filter(tech => tech && tech.trim() !== "").map((tech) => (
-              <Badge 
-                key={tech} 
-                variant="secondary" 
-                className="px-6 py-3 text-sm font-bold bg-[#B2BDC8]/80 text-[#323235] border-none rounded-xl"
+              <Badge
+                key={tech}
+                variant="secondary"
+                chip="stack-lg"
               >
                 {tech}
               </Badge>
@@ -102,12 +98,12 @@ export function TechStack({ data }: TechStackProps) {
             return (
               <div 
                 key={item.title} 
-                className="p-8 bg-white border border-border-subtle rounded-xl flex flex-col items-center justify-center text-center group"
+                className="p-6 bg-white border border-border-subtle rounded-xl flex flex-col items-center justify-center text-center group"
               >
                 <div className="mb-6">
-                  <Icon className="w-8 h-8 text-[#323235] opacity-80" weight="duotone" />
+                  <Icon className="w-8 h-8 text-foreground opacity-80" weight="duotone" />
                 </div>
-                <h3 className="text-sm font-bold text-[#323235]">
+                <h3 className="text-sm font-bold text-foreground">
                   {item.title}
                 </h3>
               </div>

@@ -5,7 +5,7 @@ export default function ProjectDetailLoading() {
   return (
     <PageContainer>
       {/* Header Skeleton */}
-      <div className="max-w-6xl mx-auto space-y-8 px-4 mb-20">
+      <div className="max-w-5xl mx-auto space-y-8 px-4 md:px-8 mb-10">
         <Skeleton className="h-6 w-32" /> {/* Back button */}
         <div className="flex gap-2">
           <Skeleton className="h-6 w-24 rounded-sm" />
@@ -15,16 +15,16 @@ export default function ProjectDetailLoading() {
         <Skeleton className="h-6 w-full max-w-2xl" />
         
         {/* Image Skeleton matching ProjectHeader.tsx aspect-[21/9] */}
-        <div className="mt-16 w-full max-w-6xl mx-auto">
+        <div className="mt-8 w-full max-w-5xl mx-auto">
           <Skeleton className="aspect-[21/9] w-full rounded-[2rem]" />
         </div>
       </div>
 
       {/* Content Columns Skeleton */}
-      <div className="w-full max-w-6xl mx-auto px-4 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="w-full max-w-5xl mx-auto px-4 md:px-8 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* Main Space */}
-        <div className="lg:col-span-8 space-y-12">
+        <div className="lg:col-span-8 space-y-8">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="space-y-6">
               <Skeleton className="h-10 w-48" />

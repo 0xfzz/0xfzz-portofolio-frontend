@@ -49,10 +49,10 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
   const displayContacts = contacts.slice(0, data?.contactCount || 3);
 
   return (
-    <footer className="py-12 border-t border-border/40">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+    <footer className="py-8 border-t border-border/40">
+      <div className="container mx-auto max-w-5xl px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         <div className="space-y-1">
-          <p className="text-sm font-bold text-[#323235]">
+          <p className="text-sm font-bold text-foreground">
             {copyrightText}
           </p>
           {data?.tagline && (
@@ -61,12 +61,12 @@ export function Footer({ data, contacts = [], visibility }: FooterProps) {
               <span className="opacity-40">•</span>
               <div className="flex items-center gap-1.5 font-mono opacity-60">
                 <span title="Frontend Hash" className="flex items-center gap-0.5">
-                  <span className="text-[8px] opacity-50 uppercase">f:</span>
+                  <span className="text-[8px] opacity-50">f:</span>
                   <span>{process.env.NEXT_PUBLIC_COMMIT_HASH}</span>
                 </span>
                 <span className="opacity-20">/</span>
                 <span title="Content Hash" className="flex items-center gap-0.5">
-                  <span className="text-[8px] opacity-50 uppercase">c:</span>
+                  <span className="text-[8px] opacity-50">c:</span>
                   <span>{process.env.NEXT_PUBLIC_CONTENT_COMMIT_HASH}</span>
                 </span>
               </div>

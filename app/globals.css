@@ -4,28 +4,59 @@
 @theme {
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-fira-code), monospace;
-  --font-space-grotesk: var(--font-space-grotesk), system-ui, sans-serif;
   
-  --color-background: #FCF8F9;
-  --color-foreground: #323235;
+  --color-background: #ffffff;
+  --color-foreground: #000000;
   
-  --color-primary: #323235;
+  --color-primary: #0000E6;
   --color-primary-foreground: #ffffff;
   
-  --color-secondary: #777E65;
+  --color-secondary: #0000E6;
   --color-secondary-foreground: #ffffff;
   
   --color-accent: #f3f4f6;
-  --color-accent-foreground: #323235;
+  --color-accent-foreground: #000000;
   
   --color-muted: #f9fafb;
   --color-muted-foreground: #5F5F61;
   
   --color-border: #e5e7eb;
-  --color-border-subtle: #E4E2E5;
+  --color-border-subtle: #e4e4e4;
   --color-input: #e5e7eb;
   --color-ring: #171717;
-  
+
+  --color-chip: #e5e7eb;
+
+  /* W4b micro-tokens — zero raw hex in TSX classNames (D2); values are 1:1 with the replaced hexes */
+  --color-ink-strong: #1a1a1a;
+  --color-tile: #F8F9FA;
+  --color-tile-hover: #F9F9F9;
+  --color-code-block: #1e1e1e;
+  --color-code-text: #d1d1d1;
+  --color-inline-code: #c7254e;
+  --color-inline-code-bg: #f9f2f4;
+  --color-inline-code-border: #ece0e3;
+  --color-table-border: #e8e8e8;
+  --color-table-head: #f8f8f8;
+  --color-table-text: #444444;
+  --color-table-row-border: #f0f0f0;
+  --color-table-row-hover: #fafafa;
+  --color-link: #0000E6;
+  --color-heading-ink: #111111;
+  --color-ink-3: #222222;
+  --color-ink-4: #333333;
+  --color-list-dot: #999999;
+  --color-quote-border: #dddddd;
+  --color-quote-ink: #666666;
+  --color-hr: #eeeeee;
+  --color-window-label: #888888;
+  --color-window-bar: #2d2d2d;
+  --color-window-bar-border: #3d3d3d;
+  --color-terminal-red: #ff5f56;
+  --color-terminal-yellow: #ffbd2e;
+  --color-terminal-green: #27c93f;
+  --color-table-head-text: #555555;
+
   --radius-lg: 0.75rem;
   --radius-md: calc(var(--radius-lg) - 2px);
   --radius-sm: calc(var(--radius-lg) - 4px);
@@ -37,9 +68,6 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-space-grotesk;
   }
 }
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code, Space_Grotesk } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/layout/Footer";
 import { getBaseUrl } from "@/lib/utils";
 
 const inter = Inter({
@@ -14,12 +14,6 @@ const inter = Inter({
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
-  display: 'swap',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
   display: 'swap',
 });
 
@@ -72,10 +66,10 @@ export const viewport = {
   maximumScale: 5, // Allow zooming for accessibility
 };
 
-import MermaidLoader from "@/components/MermaidLoader";
-import { JsonLd } from "@/components/JsonLd";
+import MermaidLoader from "@/components/providers/MermaidLoader";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { IconProvider } from "@/components/IconProvider";
+import { IconProvider } from "@/components/providers/IconProvider";
 
 export default async function RootLayout({
   children,
@@ -88,7 +82,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${firaCode.variable} ${spaceGrotesk.variable} font-sans antialiased text-foreground bg-background`}>
+      <body className={`${inter.variable} ${firaCode.variable} font-sans antialiased text-foreground bg-background`}>
         <IconProvider>
           <Navbar
             title={siteConfig.metadata.title}

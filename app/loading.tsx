@@ -2,10 +2,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="pt-32 pb-16 md:pt-48 md:pb-32 container mx-auto px-4">
+    <div className="bg-background">
+      <div className="pt-20 pb-12 md:pt-28 md:pb-16 container mx-auto max-w-5xl px-4 md:px-8">
         {/* Hero Skeleton - Matches Hero.tsx layout */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-32">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
           <div className="max-w-2xl w-full text-left space-y-8">
             <Skeleton className="h-6 w-32 rounded-full" />
             <div className="space-y-4">
@@ -25,8 +25,8 @@ export default function Loading() {
         </div>
 
         {/* Tech Stack Skeleton */}
-        <div className="mb-32">
-          <div className="flex flex-col md:flex-row gap-12 items-start">
+        <div className="mb-16">
+          <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="md:w-1/3 space-y-4">
               <Skeleton className="h-10 w-48" />
               <Skeleton className="h-6 w-full" />
@@ -41,7 +41,7 @@ export default function Loading() {
         </div>
 
         {/* Featured Projects Skeleton */}
-        <div className="space-y-12">
+        <div className="space-y-8">
           <div className="flex justify-between items-end">
             <div className="space-y-4">
               <Skeleton className="h-10 w-64" />

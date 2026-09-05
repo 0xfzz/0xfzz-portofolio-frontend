@@ -13,20 +13,20 @@ export function AwardsSection({
   title?: string 
 }) {
   return (
-    <div className="mb-32">
-      <h4 className="text-[13px] font-bold tracking-wider text-[#323235] uppercase mb-10">
+    <div className="mb-16">
+      <h4 className="text-sm font-bold text-foreground mb-6">
         {title}
       </h4>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {data.map((award, index) => (
           <div key={index} className="space-y-3 p-6 rounded-xl border border-border-subtle bg-white/50">
             <div className="flex justify-between items-start gap-4">
-              <h3 className="text-lg font-bold text-[#323235] leading-tight">{award.title}</h3>
-              <span className="text-[11px] font-bold text-[#777E65] uppercase tracking-wider whitespace-nowrap pt-1">
+              <h3 className="text-lg font-bold text-foreground leading-tight">{award.title}</h3>
+              <span className="text-[11px] font-bold text-secondary whitespace-nowrap pt-1">
                 {award.date}
               </span>
             </div>
-            <p className="text-[11px] font-bold text-[#323235] opacity-60 uppercase tracking-wide">
+            <p className="text-[11px] font-bold text-foreground opacity-60">
               Issued by {award.issuer}
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">

@@ -5,7 +5,7 @@ export default function BlogDetailLoading() {
   return (
     <PageContainer maxWidth="max-w-none">
       {/* Header Skeleton - Matches BlogDetailHeader.tsx */}
-      <div className="space-y-12 mb-16">
+      <div className="space-y-8 mb-10">
         <div className="max-w-4xl mx-auto space-y-8 px-4 w-full text-left">
           <Skeleton className="h-6 w-32" /> {/* Back button */}
           <div className="space-y-6">

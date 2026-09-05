@@ -15,13 +15,13 @@ export function PageHeader({
   className 
 }: PageHeaderProps) {
   return (
-    <div className={cn("space-y-4 mb-12 md:mb-20", className)}>
+    <div className={cn("space-y-4 mb-8 md:mb-10", className)}>
       <div className="space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#323235] leading-[1.1]">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
           {title}
         </h1>
         {subtitle && (
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl font-medium">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
             {subtitle}
           </p>
         )}

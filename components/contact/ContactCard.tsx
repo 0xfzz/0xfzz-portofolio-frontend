@@ -13,13 +13,13 @@ export function ContactCard({ icon: Icon, title, subtext, href }: ContactCardPro
       href={href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="group block p-10 bg-white rounded-2xl border border-border-subtle text-center"
+      className="group block p-6 bg-white rounded-2xl border border-border-subtle text-center"
     >
-      <div className="w-16 h-16 bg-[#F8F9FA] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#323235] transition-colors duration-500">
-        <Icon className="w-8 h-8 text-[#323235] group-hover:text-white transition-colors duration-500" weight="duotone" />
+      <div className="w-16 h-16 bg-tile rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-foreground transition-colors duration-500">
+        <Icon className="w-8 h-8 text-foreground group-hover:text-white transition-colors duration-500" weight="duotone" />
       </div>
-      <h3 className="text-lg font-bold text-[#323235] mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground font-medium group-hover:text-[#323235] transition-colors">
+      <h3 className="text-lg font-bold leading-tight text-foreground mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground font-medium group-hover:text-foreground transition-colors">
         {subtext}
       </p>
     </a>

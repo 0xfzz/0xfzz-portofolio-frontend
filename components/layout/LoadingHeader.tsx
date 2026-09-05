@@ -13,7 +13,7 @@ export function LoadingHeader({
   hasChildren = false
 }: LoadingHeaderProps) {
   return (
-    <div className={cn("space-y-4 mb-20", className)}>
+    <div className={cn("space-y-4 mb-8 md:mb-10", className)}>
       <div className="space-y-4">
         {/* Title Skeleton */}
         <Skeleton className="h-12 md:h-14 w-3/4 max-w-md" />

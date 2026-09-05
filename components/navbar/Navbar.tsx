@@ -69,7 +69,7 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
   return (
     <div>
       <nav className={`fixed top-0 left-0 right-0 bg-background/70 backdrop-blur-md border-b border-border/40 ${isOpen ? "" : "z-50"}`}>
-        <div className="container mx-auto px-6 md:px-12 lg:px-16 h-16 flex items-center justify-between">
+        <div className="container mx-auto max-w-5xl px-4 md:px-8 h-16 flex items-center justify-between">
           <Logo className="text-lg md:text-2xl" />
 
           {/* Desktop Links */}
@@ -88,7 +88,7 @@ export function Navbar({ title, navigation, visibility, resumeData }: NavbarProp
                   className={cn(
                     "text-sm font-medium transition-colors relative py-1",
                     isActive
-                      ? "text-foreground after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#323235]"
+                      ? "text-foreground after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
